@@ -54,8 +54,10 @@
     <div class="content">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto text-center">
-          <h2 class=title>ClozeSure Application</h2>
-          <p>Please complete ALL sections of the form below</p>
+          <img src="./assets/img/csicon.jpg" class="img-fluid" width=5% alt="ClozeSure Logo"></img>
+          <h3>Congratulations! The price of your Guarantee is only £<span id="price"></span></h3>
+          <p>To apply please complete <b>ALL</b> sections of the form below</p>
+          <!-- <small>The price may vary based on underwriting checks on your application.</small> -->
         </div>
       </div>
       <div class="row">
@@ -209,7 +211,7 @@
                                     <i class="now-ui-icons shopping_shop"></i>
                                   </span>
                                 </div>
-                                <input type="text" placeholder="Postcode" class="form-control" />
+                                <output type="text" placeholder="Postcode" class="form-control" id="prop_code"/>
                               </div>
                               <div class="input-group input-lg">
                                 <div class="input-group-prepend">
@@ -225,7 +227,7 @@
                                     <i class="now-ui-icons business_money-coins"></i>
                                   </span>
                                 </div>
-                                <input type="text" placeholder="£325,000" class="form-control" />
+                                <output type="text" placeholder="Agreed Sale Value" class="form-control" id="sale_price" />
                               </div>
                               <div class="input-group input-lg">
                                 <div class="input-group-prepend">
@@ -331,7 +333,6 @@
                           </form>
                       </div>
                       <div class="tab-pane" id="payment">
-                          <p>The price for The Guarantee is <b>£812.50</b></p>
                           <h5>Payment Methods</h5>
                           <table class="table-sm table-borderless">
                              <tbody>
@@ -359,6 +360,18 @@
                             />
                             <p><a href="index.html" class="btn btn-danger btn-info btn-round">Apply</a></p>
                         </div>
+                        <script type="text/javascript">
+                          var price = document.getElementById("price");
+                          var postcode = document.getElementById("prop_code");
+                          var sale_price = document.getElementById("sale_price");
+                          value_head = localStorage.getItem('price');
+                          value = localStorage.getItem('price');
+                          p_code = localStorage.getItem('postcode');
+                          s_price = localStorage.getItem('sale_price');
+                          price.innerHTML = value;
+                          postcode.innerHTML = p_code;
+                          sale_price.innerHTML = '£' + s_price;
+                      </script>
                   </div>
               </div>
             </div>
