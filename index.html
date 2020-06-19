@@ -156,34 +156,31 @@
     <div class="section text-center" data-background-color="black" id="calculator"><a name="calculator"></a>
       <div class="container">
         <h2 class="title">How much does it cost?</h2>
-          <p class="description">Use our Calculator to find your price.</p>
-          <div class="row">
-            <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
-             <div class="card card-plain" style="width: 28rem;">
-                <img class="card-img-top mt-4" style="width: 50%;" src="./assets/img/CSLogoNew.svg" alt="Card image cap">
-                <div class="card-body text-justify">
-                    <h5 class="card-title">Please enter your property details:</h5>
-                    <div class="input-group mb-3 input-lg">
-                      <div class="input-group-prepend">
-                          <span class="input-group-text">
-                            <i class="now-ui-icons shopping_shop"></i>
-                          </span>
-                      </div>
-                         <input type="text" class="form-control" aria-label="Postcode" placeholder="Postcode" id="calcpc">
-                     </div>
-                     <div class="input-group mb-3 input-lg">
-                       <div class="input-group-prepend">
-                         <span class="input-group-text">£</span>
-                       </div>
-                          <input type="text" class="form-control" aria-label="Amount" placeholder="Agreed sale price" id="calcsp" onkeyup="this.value = this.value.replace(/[^\d]*/g,'').replace(/\d(?=(\d{3})+$)/g, '$&,');">
-                      </div>
-                      <p class="card-text">We'll calculate the price and take you to the Application.</p>
-                      <li class="btn btn-primary btn-round btn-block btn-lg" id="calcbtn">Calculate</li>
-                 </div>
-
+        <div class="col-md-4 text-center ml-auto mr-auto">
+          <p class="description"><b>Use our Calculator to find your price.</b></p>
+          <div class="card card-plain">
+            <img class="card-img-top mt-4" style="width: 100%;" src="./assets/img/CSLogoNew.svg" alt="Card image cap">
+            <div class="card-body text-justify">
+              <h5 class="card-title">Please enter your property details:</h5>
+              <div class="input-group mb-3 input-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="now-ui-icons shopping_shop"></i>
+                  </span>
                 </div>
+                  <input type="text" class="form-control" aria-label="Postcode" placeholder="Postcode" id="calcpc">
+              </div>
+                <div class="input-group mb-3 input-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">£</span>
+                  </div>
+                    <input type="text" class="form-control" aria-label="Amount" placeholder="Agreed sale price" id="calcsp" onkeyup="this.value = this.value.replace(/[^\d]*/g,'').replace(/\d(?=(\d{3})+$)/g, '$&,');">
+                </div>
+                <p class="card-text"><b>We'll calculate the price and take you to the Application.</b></p>
+                <li class="btn btn-primary btn-round btn-block btn-lg" id="calcbtn">Calculate</li>
             </div>
           </div>
+        </div>
       </div>
     </div>
     <div class="section section-team text-center" id="trust"><a name="trust"></a>
