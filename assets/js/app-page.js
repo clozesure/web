@@ -1,0 +1,10 @@
+var price = document.getElementById("price");
+var postcode = document.getElementById("prop_code");
+var sale_price = document.getElementById("sale_price");
+value_head = localStorage.getItem('price');
+value = localStorage.getItem('price');
+p_code = localStorage.getItem('postcode');
+s_price = localStorage.getItem('sale_price');
+price.innerHTML = '£' + value;
+postcode.innerHTML = p_code;
+sale_price.innerHTML = '£' + s_price;
