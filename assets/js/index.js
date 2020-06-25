@@ -28,6 +28,4 @@ calcbtn.onclick = function(){
   //  } else {
   //      alert("Postcode is invalid")
   //      }
-
-
-
+  //
