@@ -1,6 +1,6 @@
-var price = document.getElementById("price");
-var postcode = document.getElementById("prop_code");
-var sale_price = document.getElementById("sale_price");
+const price = document.getElementById("price");
+const postcode = document.getElementById("prop_code");
+const sale_price = document.getElementById("sale_price");
 value_head = localStorage.getItem('price');
 value = localStorage.getItem('price');
 p_code = localStorage.getItem('postcode');

@@ -9,13 +9,16 @@ calcbtn.onclick = function(){
     const rate = '0.0005'
     const sp_num = Number(sale_price.replace(/[^0-9.-]+/g,""));
     const price = parseInt(sp_num * rate)
+    const scotRe = /AB|IV|KW|PH|DD|PA|FK|KY|KA|ML|EH|TD|DG|HS|ZE|G\d/;
 
-    if (postcode && sale_price) {
+    if (scotRe.test(postcode)) {
+        window.document.location = './scotland.html';
+    } else if (postcode && sale_price) {
         localStorage.setItem('postcode', postcode)
         localStorage.setItem('sale_price', sale_price)
         localStorage.setItem('rate', rate)
         localStorage.setItem('sp_num', sp_num)
         localStorage.setItem('price', price)
         window.document.location = './app-page.html';
-    };
-};
+    }
+}
