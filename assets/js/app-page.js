@@ -8,6 +8,6 @@ p_code = localStorage.getItem('postcode');
 s_price = localStorage.getItem('sale_price');
 price.innerHTML = '£' + value;
 first_line.innerHTML = 'Property Name/Number - Start typing your address above';
-postcode.innerHTML = 'Postcode - Start typing your address above';
+postcode.innerHTML = 'Postcode - From above';
 // postcode.innerHTML = p_code;
 sale_price.innerHTML = '£' + s_price;
