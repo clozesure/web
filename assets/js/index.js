@@ -10,11 +10,14 @@ calcbtn.onclick = function(){
     const sp_num = Number(sale_price.replace(/[^0-9.-]+/g,""));
     const price = parseInt(sp_num * rate)
     const scotRe = /AB|IV|KW|PH|DD|PA|FK|KY|KA|ML|EH|TD|DG|HS|ZE|G\d/;
+    const crownRe = /JE|GY|IM/;
     const postRe = /(GIR 0AA)|((([ABCDEFGHIJKLMNOPRSTUWYZ][0-9][0-9]?)|(([ABCDEFGHIJKLMNOPRSTUWYZ][ABCDEFGHKLMNOPQRSTUVWXY][0-9][0-9]?)|(([ABCDEFGHIJKLMNOPRSTUWYZ][0-9][ABCDEFGHJKSTUW])|([ABCDEFGHIJKLMNOPRSTUWYZ][ABCDEFGHKLMNOPQRSTUVWXY][0-9][ABEHMNPRVWXY])))) [0-9][ABDEFGHJLNPQRSTUWXYZ]{2})/;
     const postcode = rawpcode.toUpperCase();
 
     if (scotRe.test(postcode)) {
     window.document.location = './scotland.html';
+    } else if (crownRe.test(postcode)) {
+    window.document.location = './crowndep.html';
     } else if (postcode && sale_price) {
         localStorage.setItem('postcode', postcode)
         localStorage.setItem('sale_price', sale_price)

@@ -17,12 +17,6 @@
   <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="./assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
-  <!-- <link href="./assets/demo/demo.css" rel="stylesheet" /> -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
-  <!-- Form field validation js -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
-  <!-- Customised validation -->
 </head>
 
 <body class="login-page sidebar-collapse">
@@ -42,7 +36,7 @@
       <div class="container">
       <div class="row">
            <div class="col-md-6 ml-auto mr-auto text-center">
-             <img src="./assets/img/csicon.jpg" class="img-fluid" width=5% alt="ClozeSure Logo"></img>
+             <img src="./assets/img/csicon.jpg" class="img-fluid" width=10% alt="ClozeSure Logo"></img>
              <h3>Your price for the ClozeSure Guarantee is <span id="price"></span></h3>
              <p>To apply please complete <b>ALL</b> sections and <b>TABS</b> in the form below or click here to re-calculate <a href="index.html#calculator"><i class="fas fa-calculator"></i></a></p>
            <!-- <small>The price may vary based on underwriting checks on your application.</small> -->
@@ -131,9 +125,6 @@
                               </div>
                             </div>
                           </form>
-                          <script>
-                          $("#ownerForm").validate();
-                          </script>
                           <a href="#" class="btn btn-default btn-round btn-icon btn-block" data-toggle="tooltip" data-placement="right" title="Add additional Owner"><i class="now-ui-icons ui-1_simple-add"></i></a>
                       </div>
                       <div class="tab-pane" id="buyer">
@@ -187,12 +178,7 @@
                           <form class="form" method="" action="">
                             <div class="card-body">
                               <div class="input-group input-lg">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text">
-                                    <i class="now-ui-icons shopping_shop"></i>
-                                  </span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Property Name or Number">
+                                <input type="text" class="form-control" placeholder="Start typing an address..." id="input">
                               </div>
                               <div class="input-group input-lg">
                                 <div class="input-group-prepend">
@@ -200,6 +186,15 @@
                                     <i class="now-ui-icons shopping_shop"></i>
                                   </span>
                                 </div>
+                                <output type="text" class="form-control" value="Property Name or Number" id="first_line">
+                              </div>
+                              <div class="input-group input-lg">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <i class="now-ui-icons shopping_shop"></i>
+                                  </span>
+                                </div>
+                                <!-- <output type="text" placeholder="Postcode" class="form-control" id="prop_code"/> -->
                                 <output type="text" placeholder="Postcode" class="form-control" id="prop_code"/>
                               </div>
                               <div class="input-group input-lg">
@@ -387,13 +382,35 @@
    </div>
   <!--   Core JS Files   -->
   <!-- <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script> -->
+  <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <!-- <link href="./assets/demo/demo.css" rel="stylesheet" /> -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+  <!-- Form field validation js -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+  <!-- Customised validation -->
   <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
   <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
   <script src="./assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
   <script src="./assets/js/app-page.js" type="text/javascript"></script>
+  <!-- Ideal Postcodes Lookup -->
+  <script src="https://cdn.jsdelivr.net/npm/ideal-postcodes-autocomplete@0.2.1/dist/ideal-postcodes-autocomplete.min.js" integrity="sha256-lZPaPHBx7V2Gj9iAc8QfVcW02KlWB2gbrqXpGfiEGgo=" crossorigin="anonymous"></script>
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7964333.js"></script>
   <!-- End of HubSpot Embed Code -->
+
+<script>
+ var controller = new IdealPostcodes.Autocomplete.Controller({
+   api_key: "ak_kbv58axqhS72sCqyn9vhBXsdnaRvk",
+   inputField: "#input",
+   outputFields: {
+     line_1: "#first_line",
+     postcode: "#prop_code"
+   }
+ });
+</script>
+<script>
+$("#ownerForm").validate();
+</script>
 </body>
 </html>
