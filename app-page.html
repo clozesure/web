@@ -21,7 +21,7 @@
 
 <body class="login-page sidebar-collapse">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-primary fixed-top" color-on-scroll="400">
+  <nav class="navbar navbar-expand-lg bg-primary fixed-top">
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="index.html">
@@ -81,7 +81,7 @@
                                     <i class="now-ui-icons text_caps-small"></i>
                                   </span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="First Name" id="oFirst" name="oFirst" required>
+                                <input type="text" class="form-control" placeholder="First Name" id="o1fn" name="o1fn" required>
                               </div>
                               <div class="input-group input-lg">
                                 <div class="input-group-prepend">
@@ -89,7 +89,7 @@
                                     <i class="now-ui-icons text_caps-small"></i>
                                   </span>
                                 </div>
-                                <input type="text" placeholder="Last Name" class="form-control" id="oLast" name="oLast" required />
+                                <input type="text" placeholder="Last Name" class="form-control" id="o1ln" name="o1ln" required />
                               </div>
                               <div class="input-group input-lg">
                                 <div class="input-group-prepend">
@@ -97,7 +97,7 @@
                                     <i class="now-ui-icons business_bank"></i>
                                   </span>
                                 </div>
-                                <input type="text" placeholder="National Insurance Number" class="form-control" id="oNI" required />
+                                <input type="text" placeholder="National Insurance Number" class="form-control" id="o1NI" required />
                               </div>
                               <div class="input-group input-lg">
                                 <div class="input-group-prepend">
@@ -105,7 +105,7 @@
                                     <i class="now-ui-icons tech_headphones"></i>
                                   </span>
                                 </div>
-                                <input type="text" placeholder="Telephone Number" class="form-control" id="oTel" />
+                                <input type="text" placeholder="Telephone Number" class="form-control" id="o1Tel" />
                               </div>
                               <div class="input-group input-lg">
                                 <div class="input-group-prepend">
@@ -113,7 +113,7 @@
                                     <i class="now-ui-icons ui-1_email-85"></i>
                                   </span>
                                 </div>
-                                <input type="email" placeholder="Email" class="form-control" id="oEmail" required />
+                                <input type="email" placeholder="Email" class="form-control" id="o1Email" required />
                               </div>
                               <div class="input-group input-lg">
                                 <div class="input-group-prepend">
@@ -128,7 +128,7 @@
                           <a href="#" class="btn btn-default btn-round btn-icon btn-block" data-toggle="tooltip" data-placement="right" title="Add additional Owner"><i class="now-ui-icons ui-1_simple-add"></i></a>
                       </div>
                       <div class="tab-pane" id="buyer">
-                          <form class="form" method="" action="">
+                          <form class="form" method="" action="" id="buyerForm">
                             <div class="card-body">
                               <div class="input-group input-lg">
                                 <div class="input-group-prepend">
@@ -136,7 +136,7 @@
                                     <i class="now-ui-icons text_caps-small"></i>
                                   </span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="First Name">
+                                <input type="text" class="form-control" placeholder="First Name" id="b1fn" name="b1fn"/>
                               </div>
                               <div class="input-group input-lg">
                                 <div class="input-group-prepend">
@@ -144,7 +144,7 @@
                                     <i class="now-ui-icons text_caps-small"></i>
                                   </span>
                                 </div>
-                                <input type="text" placeholder="Last Name" class="form-control" />
+                                <input type="text" placeholder="Last Name" class="form-control" id="b1ln" name="b1ln"/>
                               </div>
                               <div class="input-group input-lg">
                                 <div class="input-group-prepend">
@@ -230,8 +230,8 @@
                       <div class="tab-pane" id="property">
                           <form class="form" method="" action="">
                             <div class="card-body">
-                              <div class="input-lg">
-                                <input type="text" class="form-control" placeholder="Start typing an address..." id="input">
+                              <div class="input-field input-lg">
+                                <input type="text" class="form-control" style="height: 50px" placeholder="Start typing an address..." id="input">
                               </div>
                               <p></p>
                               <div class="input-group input-lg">
@@ -415,8 +415,11 @@
                              </tbody>
                           </table>
                           <h5>Confirm & Apply</h5>
+                          <output class="text-white" type="hidden" id="second_line"></output>
+                          <output class="text-white" type="hidden" id="third_line"></output>
+                          <output class="text-white" type="hidden" id="post_town"></output>
                           <p>I confirm that I have read and understand the Terms & Conditionsand am entering into a legal agreement to purchase the ClozeSure Guarantee. <input type="checkbox" value="2"/></p>
-                          <p><a href="index.html" class="btn btn-danger btn-info btn-round ml-2">Apply</a></p>
+                          <p><button id="apply" class="btn btn-danger btn-info btn-round ml-2">Apply</button></p>
                         </div>
                   </div>
               </div>
@@ -458,13 +461,16 @@
    api_key: "ak_kbv58axqhS72sCqyn9vhBXsdnaRvk",
    inputField: "#input",
    outputFields: {
-     line_1: "#first_line",
-     postcode: "#prop_code"
+        line_1: "#first_line",
+        line_2: "#second_line",
+        line_3: "#third_line",
+        post_town: "#post_town",
+        postcode: "#prop_code"
    }
  });
 </script>
-<script>
+<!--<script>
 $("#ownerForm").validate();
-</script>
+</script>-->
 </body>
 </html>
