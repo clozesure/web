@@ -35,7 +35,7 @@ calcbtn.onclick = function(){
         localStorage.setItem('rate', rate)
         localStorage.setItem('sp_num', sp_num)
         localStorage.setItem('price', price)
-        window.document.location = './wizard.html';
+        window.document.location = './app-page.html';
     }
 }
 
