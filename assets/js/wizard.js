@@ -92,6 +92,7 @@ demo = {
                 var $valid = $('.card-wizard form').valid();
                 if(!$valid) {
                     $validator.focusInvalid();
+                    demo.showNotification('top', 'center');
                     return false;
                 }
             },
@@ -117,6 +118,8 @@ demo = {
                 var $valid = $('.card-wizard form').valid();
 
                 if(!$valid){
+                    $validator.focusInvalid();
+                    demo.showNotification('top', 'center');
                     return false;
                 } else{
                     return true;
@@ -261,11 +264,11 @@ demo = {
     },
 
     showNotification: function(from, align){
-        color = 'primary';
+        color = 'danger';
 
         $.notify({
             icon: "now-ui-icons ui-1_bell-53",
-            message: "Welcome to <b>Now Ui Dashboard Pro</b> - a beautiful freebie for every web developer."
+            message: "Please complete all the required fields."
 
         },{
             type: color,
