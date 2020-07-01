@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/CSIcon1.png">
+  <link rel="icon" type="image/png" href="./assets/img/CSIcon1.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    ClozeSure - Profile
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" />
+
+</head>
+
+<body class="landing-page sidebar-collapse">
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-primary fixed-top">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="index.html" role="button" target="">
+          ClozeSure
+        </a>
+        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar top-bar"></span>
+          <span class="navbar-toggler-bar middle-bar"></span>
+          <span class="navbar-toggler-bar bottom-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownProd" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             The Guarantee</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownProd">
+                <a class="dropdown-item" href="guarantee.html">The Guarantee</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="guarantee.html#faq">Frequently Asked Questions</a>
+                <a class="dropdown-item" href="guarantee.html#legal">Terms & Conditions</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownAbout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             About Us</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
+                <a class="dropdown-item" href="about-us.html">About Us</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="about-us.html#business">Our business</a>
+                <a class="dropdown-item" href="about-us.html#history">Our history</a>
+                <a class="dropdown-item" href="about-us.html#team">Our team</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login-page.html" rel="tooltip" title="Sign Out" data-placement="bottom" href="index.html" target="">
+              <i class="now-ui-icons users_single-02"></i>
+              <p class="d-lg-none d-xl-none">Sign Out</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about-us.html#contact" rel="tooltip" title="Contact Us" data-placement="bottom" href="about-us.html#contact" target="">
+              <i class="now-ui-icons ui-2_chat-round"></i>
+              <p class="d-lg-none d-xl-none">Contact Us</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  <div class="wrapper">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+           <div class="col-md-8 ml-auto mr-auto mt-4 text-center">
+             <h3>Claim Investigation Page</h3>
+             <h4>Here are the details of Claim number by <span id="profile"></span> on date/time.</h4>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 mt-3">
+                <ul class="nav nav-pills nav-pills-primary flex-column">
+                  <li class="nav-item"><a class="nav-link active" href="#tab1" data-toggle="tab">Property</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#tab2" data-toggle="tab">Seller</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#tab3" data-toggle="tab">Buyer</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#tab4" data-toggle="tab">Agents</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8 mt-3">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                      <div class="col-md-12">
+                      <h3>Property Details</h3>
+                      <h4 class=mt-4>Address</h4>
+                      <p><span id="first_line"></span></p>
+                      <p><span id="second_line"></span></p>
+                      <p><span id="post_town"></span></p>
+                      <p><span id="postcode"></span></p>
+                      <h4>Agreed Sale Price</h4>
+                      <p><b><span id="sale_price"></span></b>
+
+                      <h5>Estate Agent URL: www.purplebricks.com</h5>
+
+                      <h5>From AVM</h5>
+                      <p>Anticipated Price: <b>£610,000</b></p>
+                      <p class="text-danger">Maximum price: <b>£720,000</b></p>
+                      <p>Minimum price: <b>£500,000</b>
+                      <p></p>
+                      <p>Year Built: 1935</p>
+                      <p>Number of Bedrooms: 3</p>
+                      <p>Commentary:</p>
+                      <p class="text-justify">Ridge Avenue in Enfield N21 comprises 128 properties. 90 per
+cent of them are residential (i.e. there are a total of 115 homes in Ridge Avenue). The information provided about the properties on Ridge Avenue are collected from a variety of sources, including third party data, and information sent to us from the general public about Ridge Avenue. The most expensive recorded transaction in Ridge Avenue to date is 19, which sold for £635,000 on 21/02/2014. The least expensive transaction that has been recorded in Ridge Avenue is 2 Bridge Gate. It sold for £23,500 on 20/10/1999. The property sale that has been recorded in Ridge Avenue most recently was 50, which sold for £620,000 on 19/06/2014. Of the 115 homes on Ridge Avenue, 7 are flats (including apartments and maisonettes). 12 of these properties were built 84 years ago. Ridge Avenue has an average current value of £580,861, which makes it similar in price to many of the other places to live in N21 Enfield, where the average house price is £545,406. This price is derived from the free automated valuation estimates provided on the Mouseprice website. These automated valuations are known in the mortgage lending industry as AVMs. There is reasonable AVM coverage for Enfield N21. The property valuation estimates are supported by the 76 transactions recorded in Ridge Avenue by HM Land Registry since the 1st of January 1995. <br /><br />If you live on Ridge Avenue, your nearest primary school is Highfield Primary School on Highfield Road and your nearest secondary school is Winchmore School on Laburnum Grove. Ridge Avenue is great for local amenities. There is a Post Office close by on Bush Hill Parade which is an asset to the community and is a popular resource amongst local residents. Those living on Ridge Avenue can also enjoy the benefits of having a dental surgery nearby on Bury Street West.</p>
+                    </div>
+                  </div>
+                    <div class="tab-pane" id="tab2">
+                      <h3>Seller Details</h5>
+                      <h4><span id="o1fn"></span> <span id="o1ln"></span></b></h4>
+                      <p>NI Number:</p>
+                      <p>Credit Checked: Yes</p>
+                      <p>Seller-Buyer Relationship Checked: Yes</p>
+                      <p>Email:</p>
+                      <p>Telephone:</p>
+                      <p>Address (if different from Property):</p>
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                      <h3>Buyer Details</h3>
+                      <h4><span id=b1fn></span> <span id=b1ln></span></b></h4>
+                      <p>Credit Checked:</p>
+                      <p>Email:</p>
+                      <p>Telephone:</p>
+                      <p>Address:</p>
+                    </div>
+                    <div class="tab-pane" id="tab4">
+                      <h3>Conveyancer Details</h3>
+                      <h3>Estate Agent Details</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <footer class="footer">
+      <div class=" container ">
+        <div class="copyright" id="copyright">
+          &copy; Contract Completion Company Ltd 2020.
+        </div>
+      </div>
+    </footer>
+   </div>
+  <!--   Core JS Files   -->
+  <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+  <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+  <script src="./assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
+  <script src="./assets/js/profile.js" type="text/javascript"></script>
+    <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7964333.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+
+</html>
