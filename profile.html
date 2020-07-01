@@ -20,13 +20,55 @@
 </head>
 
 <body class="login-page">
-  <!-- Navbar -->
+    <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-primary fixed-top">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.html" role="button" target="">
           ClozeSure
         </a>
+        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar top-bar"></span>
+          <span class="navbar-toggler-bar middle-bar"></span>
+          <span class="navbar-toggler-bar bottom-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownProd" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             The Guarantee</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownProd">
+                <a class="dropdown-item" href="guarantee.html">The Guarantee</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="guarantee.html#faq">Frequently Asked Questions</a>
+                <a class="dropdown-item" href="guarantee.html#legal">Terms & Conditions</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownAbout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             About Us</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
+                <a class="dropdown-item" href="about-us.html">About Us</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="about-us.html#business">Our business</a>
+                <a class="dropdown-item" href="about-us.html#history">Our history</a>
+                <a class="dropdown-item" href="about-us.html#team">Our team</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login-page.html" rel="tooltip" title="Sign Out" data-placement="bottom" href="index.html" target="">
+              <i class="now-ui-icons users_single-02"></i>
+              <p class="d-lg-none d-xl-none">Sign Out</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about-us.html#contact" rel="tooltip" title="Contact Us" data-placement="bottom" href="about-us.html#contact" target="">
+              <i class="now-ui-icons ui-2_chat-round"></i>
+              <p class="d-lg-none d-xl-none">Contact Us</p>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -35,22 +77,22 @@
     <div class="section">
       <div class="container">
         <div class="row">
-           <div class="col-md-8 ml-auto mr-auto mb-4 text-center">
-             <img src="./assets/img/csicon.jpg" class="img-fluid" width=10% alt="ClozeSure Logo"></img>
-             <h3>Profile Page - <span id="profile"> </span></h3>
+           <div class="col-md-8 ml-auto mr-auto mt-4 text-center">
+             <h3>Welcome to your Profile Page</h3>
+             <h4 class="text-center"><span id="profile"> </span></h4>
              <p>Welcome to your profile page, here you can edit your details, review your Guarantee(s) and make a claim in the event of failure by your buyer.</p>
            <!-- <small>The price may vary based on underwriting checks on your application.</small> -->
           </div>
         </div>
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 mt-3">
                 <ul class="nav nav-pills nav-pills-primary flex-column">
                   <li class="nav-item"><a class="nav-link active" href="#tab1" data-toggle="tab">Your Guarantee</a></li>
                   <li class="nav-item"><a class="nav-link" href="#tab2" data-toggle="tab">Make a Claim</a></li>
                   <li class="nav-item"><a class="nav-link" href="#tab3" data-toggle="tab">Edit your Profile </a></li>
                 </ul>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 mt-3">
                 <div class="tab-content">
                     <div class="tab-pane active text-center border border-warning rounded shadow-lg" id="tab1">
                       <div class="col-md-12">
