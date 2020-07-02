@@ -37,12 +37,34 @@ applybtn.onclick = function(){
     const buy1fn = b1fn.value;
     const buy1ln = b1ln.value;
 
+    var objToday = new Date(),
+        weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+        dayOfWeek = weekday[objToday.getDay()],
+        domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
+        dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+        curMonth = months[objToday.getMonth()],
+        curYear = objToday.getFullYear(),
+        curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
+        curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
+        curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
+        curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
+    var today = dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
+    localStorage.setItem('app_date', today)
+
+    var desiredMaxLength = 8
+    var randomNumber = '';
+    for (var i = 0; i < desiredMaxLength; i++) {
+    randomNumber += Math.floor(Math.random() * 10);
+    }
+
     if (o1fn && o1ln) {
         localStorage.setItem('o1fn', own1fn)
         localStorage.setItem('o1ln', own1ln)
         localStorage.setItem('o1Email', own1Email)
         localStorage.setItem('b1fn', buy1fn)
         localStorage.setItem('b1ln', buy1ln)
+        localStorage.setItem('app_num', randomNumber)
         window.document.location = './profile.html';
     }
 }
