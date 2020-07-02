@@ -26,7 +26,7 @@ calcbtn.onclick = function(){
     window.document.location = './scotland.html';
     } else if (crownRe.test(papc)) {
     window.document.location = './crowndep.html';
-    } else if (postcode && sale_price) {
+    } else if (papc && sale_price) {
         localStorage.setItem('pafl', pafl)
         localStorage.setItem('pasl', pasl)
         localStorage.setItem('papt', papt)
@@ -36,6 +36,28 @@ calcbtn.onclick = function(){
         localStorage.setItem('sp_num', sp_num)
         localStorage.setItem('price', price)
         window.document.location = './app-page.html';
+    } else {
+        notify.showNotification('top', 'center');
+        return false;
+    }
+}
+
+notify = {
+    showNotification: function(from, align){
+        color = 'warning';
+
+        $.notify({
+            icon: "now-ui-icons ui-1_bell-53",
+            message: "Please complete all the required fields."
+
+        },{
+            type: color,
+            timer: 4000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
     }
 }
 

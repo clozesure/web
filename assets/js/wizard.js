@@ -264,7 +264,7 @@ demo = {
     },
 
     showNotification: function(from, align){
-        color = 'danger';
+        color = 'warning';
 
         $.notify({
             icon: "now-ui-icons ui-1_bell-53",
