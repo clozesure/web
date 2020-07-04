@@ -59,7 +59,7 @@ applybtn.onclick = function(){
     randomNumber += Math.floor(Math.random() * 10);
     }
 
-    if (sp_num > 1000000) {
+    if (sp_num > 2000000) {
         localStorage.setItem('o1fn', own1fn)
         localStorage.setItem('o1ln', own1ln)
         localStorage.setItem('o1Email', own1Email)
