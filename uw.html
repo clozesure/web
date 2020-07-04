@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/CSIcon1.png">
+  <link rel="icon" type="image/png" href="./assets/img/CSIcon1.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    ClozeSure - Profile
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" />
+
+</head>
+
+<body class="landing-page sidebar-collapse">
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-primary fixed-top">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="index.html" role="button" target="">
+          ClozeSure
+        </a>
+        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar top-bar"></span>
+          <span class="navbar-toggler-bar middle-bar"></span>
+          <span class="navbar-toggler-bar bottom-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownProd" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             The Guarantee</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownProd">
+                <a class="dropdown-item" href="guarantee.html">The Guarantee</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="guarantee.html#faq">Frequently Asked Questions</a>
+                <a class="dropdown-item" href="guarantee.html#legal">Terms & Conditions</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownAbout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             About Us</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
+                <a class="dropdown-item" href="about-us.html">About Us</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="about-us.html#business">Our business</a>
+                <a class="dropdown-item" href="about-us.html#history">Our history</a>
+                <a class="dropdown-item" href="about-us.html#team">Our team</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login-page.html" rel="tooltip" title="Sign Out" data-placement="bottom" href="index.html" target="">
+              <i class="now-ui-icons users_single-02"></i>Sign Out
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about-us.html#contact" rel="tooltip" title="Contact Us" data-placement="bottom" href="about-us.html#contact" target="">
+              <i class="now-ui-icons ui-2_chat-round"></i>Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  <div class="wrapper">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+           <div class="col-md-8 ml-auto mr-auto mt-4 text-center">
+             <h3>Welcome to your Profile Page</h3>
+             <h4 class="text-center"><span id="profile"> </span></h4>
+             <p>Welcome to your profile page, here you can edit your details, review your Guarantee(s) and make a claim in the event of failure by your buyer.</p>
+           <!-- <small>The price may vary based on underwriting checks on your application.</small> -->
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 mt-3">
+                <ul class="nav nav-pills nav-pills-primary flex-column">
+                  <li class="nav-item"><a class="nav-link active" href="#tab1" data-toggle="tab">Your Guarantee</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#tab2" data-toggle="tab">Make a Claim</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#tab3" data-toggle="tab">Edit your Profile </a></li>
+                  <li class="nav-item"><a class="nav-link" href="#tab4" data-toggle="tab">Print </a></li>
+                </ul>
+            </div>
+            <div class="col-md-8 mt-3">
+                <div class="tab-content">
+                    <div class="tab-pane active text-center border border-warning rounded shadow-lg" style="max-height:500px; overflow-y:scroll" id="tab1">
+                      <div class="col-md-12">
+                      <img class="mt-2" src="./assets/img/CSlogoLight.jpg" class="img-fluid" width=20% alt="ClozeSure Logo"></img><p></p>
+                      <h5>GUARANTEE</h5>
+                      <p>Reference: <b><span id="app_num"></span></b></p>
+                      <p>This guarantee (the <b>"Guarantee"</b>), is dated as of <span id=app_date>Date</span> (the <b>"Effective Date"</b>) by and between:</p>
+                      <p><b class="text-primary">Contract Completion Company Limited</b>, a limited company with its principal place of business at 8-11 Crescent, London EC3N 2LY, (the <b>"Guarantor"/"Us"/"We"</b>)</p>
+                      <p>and</p>
+                      <p><b class="text-primary"><span id="o1fn"></span> <span id="o1ln"></span></b> (the <b>"Vendor"/"Seller"/"You"/"Your"</b>)</p>.
+                      <h5>W I T N E S S E T H:</h5>
+                      <p><b>WHERAS</b> <b class="text-primary"><span id=b1fn></span> <span id=b1ln></span></b> (the <b>"Vendee(s)"/"Buyer(s)"/"Their"</b>) have entered into an Agreement by Contract to purchase <b>Your</b> property located at
+                        <b class="text-primary"><span id="first_line"></span>, <span id="second_line"></span>, <span id="post_town"></span>, <span id="postcode"></span></b>,
+                        for the sum of <b class="text-primary"><span id="sale_price"></span></b>; and</p>
+                      <p><b>WHEREAS You</b> have asked <b>Us</b> to provide a Guarantee for the outstanding sum of the obligation of the <b>Buyer</b> of <b>Your</b> property, for the agreed purchase price
+                        less the deposit received, in the event that the <b>Buyer</b> is unable or unwilling to make such a payment and fails to complete; and</p>
+                      <p><b>WHEREAS You</b> confirm that <b>You</b> or <b>Your</b> designated Legal Representative has received the completed closing documents and 10% deposit from the <b>Buyer</b> of the Property; and</p>
+                      <p><b>NOW, THEREFORE</b> for the value received, in consideration of the premises and other good and valuable consideration, the receipt and sufficency of which are hereby acknowledged, <b>You</b>
+                         and <b>We</b> as <b>Guarantors</b> hereby agree as follows:</p>
+                    </div>
+                  </div>
+                    <div class="tab-pane" id="tab2" name="tab2">
+                      <h5>Make a Claim</h5>
+                      <p>To make a claim, click on the button below. Your claim will be forwarded to our team who will then contact you at the phone number or email address in your Profile. They will request any additional required information and your consent to contact your Conveyancer. You will be kept up to date at all stages of the process.
+                      <p id="claimbtn" class="btn btn-danger btn-info btn-round ml-2">Claim</p>
+                      <script>
+                      const btnClaim = document.getElementById("claimbtn");
+                      btnClaim.onclick = function(){
+                        var desiredMaxLength = 8
+                        var randomNumber = '';
+                        for (var i = 0; i < desiredMaxLength; i++) {
+                        randomNumber += Math.floor(Math.random() * 10);
+                        }
+                        var objToday = new Date(),
+                          weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+                          dayOfWeek = weekday[objToday.getDay()],
+                          domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
+                          dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
+                          months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+                          curMonth = months[objToday.getMonth()],
+                          curYear = objToday.getFullYear(),
+                          curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
+                          curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
+                          curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
+                          curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
+                        var today = dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
+                        localStorage.setItem('claim', randomNumber)
+                        localStorage.setItem('claim_date', today)
+                        window.document.location = './claim.html';
+                      }
+                      </script>
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                        <h5>Edit your Profile</h5>
+                        <p> You can update any of the information below:
+                          <form class="form" id="ownerForm" method="get" action="">
+                            <div class="card-body">
+                              <div class="input-group input-lg">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <i class="now-ui-icons text_caps-small"></i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="First Name" />
+                              </div>
+                              <div class="input-group input-lg">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <i class="now-ui-icons text_caps-small"></i>
+                                  </span>
+                                </div>
+                                <input type="text" placeholder="Last Name" class="form-control" id="o1ln" />
+                              </div>
+                              <div class="input-group input-lg">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <i class="now-ui-icons business_bank"></i>
+                                  </span>
+                                </div>
+                                <input type="text" placeholder="National Insurance Number" class="form-control" />
+                              </div>
+                              <div class="input-group input-lg">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <i class="now-ui-icons tech_headphones"></i>
+                                  </span>
+                                </div>
+                                <input type="text" placeholder="Telephone Number" class="form-control" />
+                              </div>
+                              <div class="input-group input-lg">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <i class="now-ui-icons ui-1_email-85"></i>
+                                  </span>
+                                </div>
+                                <input type="email" placeholder="Email" class="form-control" />
+                              </div>
+                              <p><button class="btn btn-primary btn-round">Update</button></p>
+                            </div>
+                          </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <footer class="footer">
+      <div class=" container ">
+        <div class="copyright" id="copyright">
+          &copy; Contract Completion Company Ltd 2020.
+        </div>
+      </div>
+    </footer>
+   </div>
+  <!--   Core JS Files   -->
+  <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="./assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+  <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+  <script src="./assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
+  <script src="./assets/js/profile.js" type="text/javascript"></script>
+    <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7964333.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+
+</html>

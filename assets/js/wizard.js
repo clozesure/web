@@ -15,6 +15,7 @@ pasl = localStorage.getItem('pasl');
 papt = localStorage.getItem('papt');
 p_code = localStorage.getItem('papc');
 s_price = localStorage.getItem('sale_price');
+sp_num = localStorage.getItem('sp_num');
 
 first_line.innerHTML = pafl;
 second_line.innerHTML = pasl;
@@ -58,7 +59,14 @@ applybtn.onclick = function(){
     randomNumber += Math.floor(Math.random() * 10);
     }
 
-    if (o1fn && o1ln) {
+    if (sp_num > 1000000) {
+        localStorage.setItem('o1fn', own1fn)
+        localStorage.setItem('o1ln', own1ln)
+        localStorage.setItem('o1Email', own1Email)
+        localStorage.setItem('b1fn', buy1fn)
+        localStorage.setItem('b1ln', buy1ln)
+        window.document.location = './uw.html';
+    } else if (o1fn && o1ln) {
         localStorage.setItem('o1fn', own1fn)
         localStorage.setItem('o1ln', own1ln)
         localStorage.setItem('o1Email', own1Email)
