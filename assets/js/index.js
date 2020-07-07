@@ -14,7 +14,11 @@ calcbtn.onclick = function(){
     const pasl = second_line.value;
     const papt = post_town.value;
     const papc = postcode.value;
-    const rate = '0.0005'
+    if (localStorage.getItem('rate') <= 0.0005) {
+        rate = 0.0005;
+    } else {
+        rate = localStorage.getItem('rate');
+    }
     const sp_num = Number(sale_price.replace(/[^0-9.-]+/g,""));
     const price = parseInt(sp_num * rate)
     const scotRe = /(^G\d)|(^AB\d)|(^IV\d)|(^KW\d)|(^PH\d)|(^DD\d)|(^PA\d)|(^FK\d)|(^KY\d)|(^KA\d)|(^ML\d)|(^EH\d)|(^TD\d)|(^DG\d)|(^HS\d)|(^ZE\d)/;
@@ -35,6 +39,7 @@ calcbtn.onclick = function(){
         localStorage.setItem('rate', rate)
         localStorage.setItem('sp_num', sp_num)
         localStorage.setItem('price', price)
+        localStorage.setItem('max_value', 2000000)
         window.document.location = './app-page.html';
     } else {
         notify.showNotification('top', 'center');

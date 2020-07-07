@@ -37,6 +37,7 @@ applybtn.onclick = function(){
     const own1Email = o1Email.value;
     const buy1fn = b1fn.value;
     const buy1ln = b1ln.value;
+    max_value = parseInt(localStorage.getItem('max_value'));
 
     var objToday = new Date(),
         weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
@@ -59,14 +60,12 @@ applybtn.onclick = function(){
     randomNumber += Math.floor(Math.random() * 10);
     }
 
-    if (sp_num > 2000000) {
         localStorage.setItem('o1fn', own1fn)
         localStorage.setItem('o1ln', own1ln)
         localStorage.setItem('o1Email', own1Email)
         localStorage.setItem('b1fn', buy1fn)
         localStorage.setItem('b1ln', buy1ln)
-        window.document.location = './uw.html';
-    } else if (o1fn && o1ln) {
+
         localStorage.setItem('o1fn', own1fn)
         localStorage.setItem('o1ln', own1ln)
         localStorage.setItem('o1Email', own1Email)
@@ -74,7 +73,7 @@ applybtn.onclick = function(){
         localStorage.setItem('b1ln', buy1ln)
         localStorage.setItem('app_num', randomNumber)
         window.document.location = './profile.html';
-    }
+
 }
 //
 
