@@ -23,21 +23,56 @@ post_town.innerHTML = papt;
 postcode.innerHTML = p_code;
 sale_price.innerHTML = '£' + s_price;
 
-//Post form fields
+//Get form fields
 const o1fn = document.getElementById("o1fn");
 const o1ln = document.getElementById("o1ln");
 const o1Email = document.getElementById("o1Email");
+const o1NI = document.getElementById("o1NI");
+const o1Phone = document.getElementById("o1Phone");
 const b1fn = document.getElementById("b1fn");
 const b1ln = document.getElementById("b1ln");
+const b1Email = document.getElementById("b1Email");
+const b1Phone = document.getElementById("b1Phone");
 const applybtn = document.getElementById("btnApply");
+const ocn = document.getElementById("ocn");
+const occ = document.getElementById("occ");
+const ocnEmail = document.getElementById("ocnEmail");
+const oean = document.getElementById("oean");
+const oeac = document.getElementById("oean");
+const oeanEmail = document.getElementById("oeanEmail");
+const regEmail = document.getElementById("regEmail");
+const confCheck = document.getElementById("confCheck");
+
+//Show or hide Payment
+const payTab = document.getElementById("payTab");
+
+max_value = parseInt(localStorage.getItem('max_value'));
+sp_num = parseInt(localStorage.getItem('sp_num'));
+
+if (sp_num >= max_value) {
+    payTab.style.display="none";
+}
+
+// regEmail.value = o1Email.value;
+
 
 applybtn.onclick = function(){
+
     const own1fn = o1fn.value;
     const own1ln = o1ln.value;
     const own1Email = o1Email.value;
+    const own1NI = o1NI.value;
+    const own1Phone = o1Phone.value;
     const buy1fn = b1fn.value;
     const buy1ln = b1ln.value;
-    max_value = parseInt(localStorage.getItem('max_value'));
+    const buyEmail = b1Email.value;
+    const buyPhone = b1Phone.value;
+    const owncn = ocn.value;
+    const owncc = occ.value;
+    const owncnEmail = ocnEmail.value;
+    const ownean = oean.value;
+    const owneac = oeac.value;
+    const owneanEmail = oeanEmail.value;
 
     var objToday = new Date(),
         weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
@@ -60,19 +95,43 @@ applybtn.onclick = function(){
     randomNumber += Math.floor(Math.random() * 10);
     }
 
-        localStorage.setItem('o1fn', own1fn)
-        localStorage.setItem('o1ln', own1ln)
-        localStorage.setItem('o1Email', own1Email)
-        localStorage.setItem('b1fn', buy1fn)
-        localStorage.setItem('b1ln', buy1ln)
-
-        localStorage.setItem('o1fn', own1fn)
-        localStorage.setItem('o1ln', own1ln)
-        localStorage.setItem('o1Email', own1Email)
-        localStorage.setItem('b1fn', buy1fn)
-        localStorage.setItem('b1ln', buy1ln)
-        localStorage.setItem('app_num', randomNumber)
-        window.document.location = './profile.html';
+    localStorage.setItem('o1fn', own1fn);
+    localStorage.setItem('o1ln', own1ln);
+    localStorage.setItem('o1Email', own1Email);
+    localStorage.setItem('o1NI', own1NI);
+    localStorage.setItem('o1Phone', own1Phone);
+    localStorage.setItem('b1fn', buy1fn);
+    localStorage.setItem('b1ln', buy1ln);
+    localStorage.setItem('b1Email', buyEmail);
+    localStorage.setItem('b1Phone', buyPhone);
+    localStorage.setItem('ocn', owncn);
+    localStorage.setItem('occ', owncc);
+    localStorage.setItem('ocnEmail', owncnEmail);
+    localStorage.setItem('oean', ownean);
+    localStorage.setItem('oeac', owneac);
+    localStorage.setItem('oeanEmail', owneanEmail);
+    localStorage.setItem('app_num', randomNumber);
+    var $validator = $('.card-wizard form').validate({
+        rules: {
+            'confCheck[]': {
+                    required: true,
+                    minlength: 1
+                },
+            },
+        messages: {
+            'confCheck[]': "Another message"
+        },
+        highlight: function(element) {
+            $(element).closest('.input-group').removeClass('has-success').addClass('has-danger');
+            }
+        });
+    var $valid = $('.card-wizard form').valid();
+    if(!$valid) {
+        $validator.focusInvalid();
+        demo.showNotification('top', 'center');
+        return false;
+    }
+    window.document.location = './profile.html';
 
 }
 //
@@ -101,7 +160,11 @@ demo = {
                 b1ln: {
                   required: true,
                   minlength: 2
-                }
+                },
+                'confCheck[]': {
+                    required: true,
+                    minlength: 1
+                },
             },
             highlight: function(element) {
                 $(element).closest('.input-group').removeClass('has-success').addClass('has-danger');
@@ -293,7 +356,7 @@ demo = {
     },
 
     showNotification: function(from, align){
-        color = 'warning';
+        color = 'info';
 
         $.notify({
             icon: "now-ui-icons ui-1_bell-53",

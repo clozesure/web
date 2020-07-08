@@ -40,6 +40,12 @@ calcbtn.onclick = function(){
         localStorage.setItem('sp_num', sp_num)
         localStorage.setItem('price', price)
         localStorage.setItem('max_value', 2000000)
+        const avmpost = "N21 2AR";
+
+        if (papc.valueOf() === avmpost.valueOf()) {
+            localStorage.setItem('max_value', 750000)
+        }
+
         window.document.location = './app-page.html';
     } else {
         notify.showNotification('top', 'center');
@@ -49,7 +55,7 @@ calcbtn.onclick = function(){
 
 notify = {
     showNotification: function(from, align){
-        color = 'warning';
+        color = 'info';
 
         $.notify({
             icon: "now-ui-icons ui-1_bell-53",

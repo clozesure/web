@@ -30,7 +30,7 @@ ClozeSure - Application
                         <form action="" method="">
                             <div class="card-header text-center" data-background-color="orange">
                                 <h3 class="card-title">
-                                Your price for the ClozeSure Guarantee is <button class="btn btn-warning ml-2"><b><span id="price"></span></b></button>
+                                Your quote for the ClozeSure Guarantee is <button class="btn btn-warning ml-2" style="height:90px"><h3><b><span id="price"><h3></span></b></button>
                                 </h3>
                     <!-- <h3 class="description">This information will let us know more about you.</h5> -->
                                 <div class="wizard-navigation">
@@ -90,7 +90,7 @@ ClozeSure - Application
                                                         <i class="now-ui-icons business_bank"></i>
                                                     </div>
                                                     </div>
-                                                    <input type="text" placeholder="Owner's National Insurance Number" class="form-control" name="o1NI" />
+                                                    <input type="text" placeholder="Owner's National Insurance Number" class="form-control" id="o1NI" />
                                                 </div>
                                                 <div class="input-group form-control-lg">
                                                     <div class="input-group-prepend">
@@ -106,8 +106,10 @@ ClozeSure - Application
                                                         <i class="now-ui-icons text_caps-small"></i>
                                                     </div>
                                                     </div>
-                                                    <input type="text" placeholder="Telephone" class="form-control" name="phone"/>
+                                                    <input type="text" placeholder="Telephone" class="form-control" id="o1Phone"/>
                                                 </div>
+                                                <p></p>
+                                                <p class="mt-2">Is the property the Owner's Principal Residence? <input type="checkbox" /></p>
                                             </div>
                                         </div>
                                     </div>
@@ -137,7 +139,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons ui-1_email-85"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="email" placeholder="Buyer's Email (required)" class="form-control" name="b1email"/>
+                                                        <input type="email" placeholder="Buyer's Email (required)" class="form-control" id="b1Email" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -145,7 +147,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons text_caps-small"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="text" placeholder="Buyer's Telephone" class="form-control" name="b1phone"/>
+                                                        <input type="text" placeholder="Buyer's Telephone" class="form-control" id="b1Phone" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -160,7 +162,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons text_caps-small"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Name of Coveyancer" name="ocn" />
+                                                        <input type="text" class="form-control" placeholder="Name of Coveyancer" id="ocn" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -168,7 +170,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons text_caps-small"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="text" placeholder="Company" class="form-control" name="occ" />
+                                                        <input type="text" placeholder="Company" class="form-control" id="occ" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -176,7 +178,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons ui-1_email-85"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="email" placeholder="Email" class="form-control" name="ocnemail"/>
+                                                        <input type="email" placeholder="Email" class="form-control" id="ocnEmail" />
                                                     </div>
                                                     <p></p>
                                                     <h5 class="info-text"> Estate Agent Details </h5>
@@ -186,7 +188,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons text_caps-small"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Contact" name="oean" />
+                                                        <input type="text" class="form-control" placeholder="Contact" id="oean" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -194,7 +196,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons text_caps-small"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="text" placeholder="Company" class="form-control" name="oeac" />
+                                                        <input type="text" placeholder="Company" class="form-control" id="oeac" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -202,7 +204,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons ui-1_email-85"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="email" placeholder="Email" class="form-control" name="oeaemail"/>
+                                                        <input type="email" placeholder="Email" class="form-control" id="oeanEmail"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -236,24 +238,26 @@ ClozeSure - Application
                                                         </div>
                                                         <input type="password" class="form-control" placeholder="Confirm Password" name="regCPw" />
                                                     </div>
-                                                <h5 class="info-text"> Payment Methods </h5>
-                                                <table class="table-sm table-borderless ml-2">
-                                                    <tbody>
-                                                    <tr>
-                                                        <th scope="col"><a href="#" class="btn btn-default btn-round btn-icon btn-block">
-                                                            <i class="now-ui-icons shopping_credit-card"></i></a></th>
-                                                        <th scope="col">Credit or Debit Card</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="col"><a href="landing-page.html" class="btn btn-info btn-round btn-icon btn-block mb-4">
-                                                            <i class="now-ui-icons shopping_credit-card"></i></a></th>
-                                                        <th scope="col">PayPal</th>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
+                                                    <div class="mt-4" id="payTab">
+                                                        <h5 class="info-text"> Payment Methods </h5>
+                                                        <table class="table-sm table-borderless ml-2">
+                                                            <tbody>
+                                                            <tr>
+                                                                <th scope="col"><a href="#" class="btn btn-default btn-round btn-icon btn-block">
+                                                                    <i class="now-ui-icons shopping_credit-card"></i></a></th>
+                                                                <th scope="col">Credit or Debit Card</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="col"><a href="landing-page.html" class="btn btn-info btn-round btn-icon btn-block mb-4">
+                                                                    <i class="now-ui-icons shopping_credit-card"></i></a></th>
+                                                                <th scope="col">PayPal</th>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 <h5 class="info-text"> Confirm & Apply </h5>
                                                 <p><p>I confirm that I have read and understand the Terms & Conditions and am entering into a legal agreement to purchase the ClozeSure Guarantee.
-                                                    <input type="checkbox" value="2" />
+                                                    <input type="checkbox" id="confCheck" name="confCheck[]" />
                                                 </div>
                                             </div>
                                     </div>

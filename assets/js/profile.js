@@ -14,9 +14,12 @@ const app_num = document.getElementById("app_num")
 const po1fn = document.getElementById("po1fn")
 const po1ln = document.getElementById("po1ln")
 const po1Email = document.getElementById("po1Email")
+const po1Phone = document.getElementById("po1Phone")
+const po1NI = document.getElementById("po1NI")
+
 first = localStorage.getItem('o1fn');
 last = localStorage.getItem('o1ln');
-lo1Email = localStorage.getItem('o1Email');
+o1Email = localStorage.getItem('o1Email');
 buyfirst = localStorage.getItem('b1fn');
 buylast = localStorage.getItem('b1ln');
 value = localStorage.getItem('price');
@@ -28,6 +31,10 @@ s_price = localStorage.getItem('sale_price');
 date = localStorage.getItem('app_date');
 number = localStorage.getItem('app_num');
 sp_num = localStorage.getItem('sp_num');
+o1NI = localStorage.getItem('o1NI');
+o1Phone = localStorage.getItem('o1Phone');
+ocn = localStorage.getItem('ocn');
+
 //price.innerHTML = '£' + value;
 profile.innerHTML = first + ' ' + last;
 postcode.innerHTML = p_code;
@@ -43,10 +50,12 @@ app_date.innerHTML = date;
 app_num.innerHTML = number;
 po1fn.value = first;
 po1ln.value = last;
-po1Email.value = lo1Email;
+po1Email.value = o1Email;
+po1NI.value = o1NI;
+po1Phone.value = o1Phone;
 
 max_value = parseInt(localStorage.getItem('max_value'));
-// const max_value = 2000000
+//(sp_num >= max_value || ocn == "")
 
 if (sp_num >= max_value) {
     const pill1 = document.getElementById("pill1");
