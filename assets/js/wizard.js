@@ -29,14 +29,18 @@ const o1ln = document.getElementById("o1ln");
 const o1Email = document.getElementById("o1Email");
 const o1NI = document.getElementById("o1NI");
 const o1Phone = document.getElementById("o1Phone");
+const prinAd = document.getElementById("prinAd");
 const b1fn = document.getElementById("b1fn");
 const b1ln = document.getElementById("b1ln");
 const b1Email = document.getElementById("b1Email");
 const b1Phone = document.getElementById("b1Phone");
 const applybtn = document.getElementById("btnApply");
+const cancelbtn = document.getElementById("btnCancel");
 const ocn = document.getElementById("ocn");
 const occ = document.getElementById("occ");
 const ocnEmail = document.getElementById("ocnEmail");
+const exchDate = document.getElementById("exchDate");
+const compDate = document.getElementById("compDate");
 const oean = document.getElementById("oean");
 const oeac = document.getElementById("oean");
 const oeanEmail = document.getElementById("oeanEmail");
@@ -55,6 +59,10 @@ if (sp_num >= max_value) {
 
 // regEmail.value = o1Email.value;
 
+cancelbtn.onclick = function() {
+    window.document.location = './index.html';
+}
+
 
 applybtn.onclick = function(){
 
@@ -63,6 +71,7 @@ applybtn.onclick = function(){
     const own1Email = o1Email.value;
     const own1NI = o1NI.value;
     const own1Phone = o1Phone.value;
+    const pAddress = prinAd.value;
     const buy1fn = b1fn.value;
     const buy1ln = b1ln.value;
     const buyEmail = b1Email.value;
@@ -70,6 +79,8 @@ applybtn.onclick = function(){
     const owncn = ocn.value;
     const owncc = occ.value;
     const owncnEmail = ocnEmail.value;
+    const eDate = exchDate.value;
+    const cDate = compDate.value;
     const ownean = oean.value;
     const owneac = oeac.value;
     const owneanEmail = oeanEmail.value;
@@ -100,6 +111,7 @@ applybtn.onclick = function(){
     localStorage.setItem('o1Email', own1Email);
     localStorage.setItem('o1NI', own1NI);
     localStorage.setItem('o1Phone', own1Phone);
+    localStorage.setItem('prinAd', pAddress);
     localStorage.setItem('b1fn', buy1fn);
     localStorage.setItem('b1ln', buy1ln);
     localStorage.setItem('b1Email', buyEmail);
@@ -107,6 +119,8 @@ applybtn.onclick = function(){
     localStorage.setItem('ocn', owncn);
     localStorage.setItem('occ', owncc);
     localStorage.setItem('ocnEmail', owncnEmail);
+    localStorage.setItem('exchDate', eDate);
+    localStorage.setItem('compDate', cDate);
     localStorage.setItem('oean', ownean);
     localStorage.setItem('oeac', owneac);
     localStorage.setItem('oeanEmail', owneanEmail);
@@ -137,6 +151,59 @@ applybtn.onclick = function(){
 //
 
 demo = {
+    initDateTimePicker: function() {
+        if($(".datetimepicker").length != 0){
+          $('.datetimepicker').datetimepicker({
+              icons: {
+                  time: "now-ui-icons tech_watch-time",
+                  date: "now-ui-icons ui-1_calendar-60",
+                  up: "fa fa-chevron-up",
+                  down: "fa fa-chevron-down",
+                  previous: 'now-ui-icons arrows-1_minimal-left',
+                  next: 'now-ui-icons arrows-1_minimal-right',
+                  today: 'fa fa-screenshot',
+                  clear: 'fa fa-trash',
+                  close: 'fa fa-remove'
+              }
+          });
+        }
+
+        if($(".datepicker").length != 0){
+          $('.datepicker').datetimepicker({
+             format: 'DD/MM/YYYY',
+             icons: {
+                 time: "now-ui-icons tech_watch-time",
+                 date: "now-ui-icons ui-1_calendar-60",
+                 up: "fa fa-chevron-up",
+                 down: "fa fa-chevron-down",
+                 previous: 'now-ui-icons arrows-1_minimal-left',
+                 next: 'now-ui-icons arrows-1_minimal-right',
+                 today: 'fa fa-screenshot',
+                 clear: 'fa fa-trash',
+                 close: 'fa fa-remove'
+             }
+          });
+        }
+
+        if($(".timepicker").length != 0){
+          $('.timepicker').datetimepicker({
+  //          format: 'H:mm',    // use this format if you want the 24hours timepicker
+             format: 'h:mm A',    //use this format if you want the 12hours timpiecker with AM/PM toggle
+             icons: {
+                 time: "now-ui-icons tech_watch-time",
+                 date: "now-ui-icons ui-1_calendar-60",
+                 up: "fa fa-chevron-up",
+                 down: "fa fa-chevron-down",
+                 previous: 'now-ui-icons arrows-1_minimal-left',
+                 next: 'now-ui-icons arrows-1_minimal-right',
+                 today: 'fa fa-screenshot',
+                 clear: 'fa fa-trash',
+                 close: 'fa fa-remove'
+             }
+          });
+        }
+    },
+
     initNowUiWizard: function(){
         // Code for the Validator
         var $validator = $('.card-wizard form').validate({
@@ -228,9 +295,13 @@ demo = {
                 if($current >= $total) {
                     $($wizard).find('.btn-next').hide();
                     $($wizard).find('.btn-finish').show();
+                    $($wizard).find('.btn-cancel').hide();
+                } else if($current <= 1) {
+                    $($wizard).find('.btn-cancel').show();
                 } else {
                     $($wizard).find('.btn-next').show();
                     $($wizard).find('.btn-finish').hide();
+                    $($wizard).find('.btn-cancel').hide();
                 }
 
                 button_text = navigation.find('li:nth-child(' + $current + ') a').html();

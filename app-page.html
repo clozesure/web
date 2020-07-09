@@ -108,8 +108,13 @@ ClozeSure - Application
                                                     </div>
                                                     <input type="text" placeholder="Telephone" class="form-control" id="o1Phone"/>
                                                 </div>
-                                                <p></p>
-                                                <p class="mt-2">Is the property the Owner's Principal Residence? <input type="checkbox" /></p>
+                                                <div>
+                                                    <select class="selectpicker"  data-style="btn btn-primary btn-round btn-block" title="Is the property the Owner's Principal Residence?" id="prinAd" name="prinAd">
+                                                        <option value="1">Yes, this is the main residence</option>
+                                                        <option value="2">No - I have another property in the UK</option>
+                                                        <option value="3">No - I have another proerty abroad</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -179,6 +184,22 @@ ClozeSure - Application
                                                         </div>
                                                         </div>
                                                         <input type="email" placeholder="Email" class="form-control" id="ocnEmail" />
+                                                    </div>
+                                                    <div class="input-group form-control-lg">
+                                                        <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="now-ui-icons ui-1_calendar-60"></i>
+                                                        </div>
+                                                        </div>
+                                                        <input type="text" placeholder="Date of exchange or Contracts" class="form-control datepicker" id="exchDate" name="exchDate" />
+                                                    </div>
+                                                    <div class="input-group form-control-lg">
+                                                        <div class="input-group-prepend">
+                                                        <div class="input-group-text">
+                                                            <i class="now-ui-icons ui-1_calendar-60"></i>
+                                                        </div>
+                                                        </div>
+                                                        <input type="text" placeholder="Planned date for Completion" class="form-control datepicker" id="compDate" name="compDate"/>
                                                     </div>
                                                     <p></p>
                                                     <h5 class="info-text"> Estate Agent Details </h5>
@@ -273,6 +294,7 @@ ClozeSure - Application
                                 </div>
                                 <div class="pull-left">
                                     <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+                                    <input type='button' class='btn btn-cancel btn-fill btn-danger btn-wd' name='Cancel' id="btnCancel" value='Cancel' />
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -288,15 +310,14 @@ ClozeSure - Application
 <!--   Core JS Files   -->
 <script src="./assets/js/core/jquery.min.js" ></script>
 <script src="./assets/js/core/popper.min.js" ></script>
-
 <script src="./assets/js/core/bootstrap.min.js" ></script>
+<script src="./assets/js/plugins/moment.min.js"></script>
 
 <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js" ></script>
 
-<script src="./assets/js/plugins/moment.min.js"></script>
-
 <!--  Plugin for Sweet Alert -->
 <script src="./assets/js/plugins/sweetalert2.min.js"></script>
+<script src="./assets/js/plugins/bootstrap-selectpicker.js"></script>
 
 <!-- Forms Validations Plugin -->
 <script src="./assets/js/plugins/jquery.validate.min.js"></script>
@@ -314,11 +335,13 @@ ClozeSure - Application
 <script src="./assets/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="./assets/js/now-ui-dashboard.min.15.js" type="text/javascript"></script>
+<!-- Datepicker -->
+<script src="./assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
 <script src="./assets/js/wizard.js"></script>
 <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7964333.js"></script>
-  <!-- End of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7964333.js"></script>
+<!-- End of HubSpot Embed Code -->
 
 
 
@@ -344,7 +367,14 @@ ClozeSure - Application
 
 
 
-
+<script>
+  $(document).ready(function(){
+    // initialise Datetimepicker and Sliders
+    demo.initDateTimePicker();
+    //if($('.slider').length != 0){
+    //  demo.initSliders();
+    });
+</script>
 
 
 
@@ -372,6 +402,9 @@ ClozeSure - Application
     },600);
   });
 </script>
+
+
+
 
 
 

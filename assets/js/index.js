@@ -43,7 +43,7 @@ calcbtn.onclick = function(){
         const avmpost = "N21 2AR";
 
         if (papc.valueOf() === avmpost.valueOf()) {
-            localStorage.setItem('max_value', 750000)
+            localStorage.setItem('max_value', 720000)
         }
 
         window.document.location = './app-page.html';

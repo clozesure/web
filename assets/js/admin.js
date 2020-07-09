@@ -30,7 +30,13 @@ const claim = document.getElementById("claim");
 const claim_date = document.getElementById("claim_date");
 const claim_tab = document.getElementById("ctab");
 const claim_card = document.getElementById("tab7");
+const exchDate = document.getElementById("exchDate");
+const compDate = document.getElementById("compDate");
+const prinAd = document.getElementById("prinAd");
 
+pAddress = localStorage.getItem('prinAd');
+eDate = localStorage.getItem('exchDate');
+cDate = localStorage.getItem('compDate');
 first = localStorage.getItem('o1fn');
 last = localStorage.getItem('o1ln');
 oEmail = localStorage.getItem('o1Email');
@@ -60,6 +66,12 @@ rate = localStorage.getItem('rate');
 claim_num = localStorage.getItem('claim');
 claim_dte = localStorage.getItem('claim_date');
 
+if (pAddress === "1") {
+    prinAd.innerHTML = 'Yes';
+} else {
+    prinAd.innerHTML = 'No';
+}
+
 //price.innerHTML = '£' + value;
 profile.innerHTML = first + ' ' + last;
 postcode.innerHTML = p_code;
@@ -85,6 +97,8 @@ first_line.innerHTML = pafl;
 second_line.innerHTML = pasl;
 post_town.innerHTML = papt;
 app_date.innerHTML = date;
+exchDate.innerHTML = eDate;
+compDate.innerHTML = cDate;
 app_num.innerHTML = number;
 claim.innerHTML = claim_num;
 claim_date.innerHTML = claim_dte;
