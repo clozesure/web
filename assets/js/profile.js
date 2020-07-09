@@ -114,7 +114,7 @@ document.getElementById("postctab").style.display="";
 
 notify = {
     showNotification: function(from, align){
-        color = 'warning';
+        color = 'info';
 
         $.notify({
             icon: "now-ui-icons ui-1_bell-53",
