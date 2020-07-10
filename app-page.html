@@ -108,11 +108,19 @@ ClozeSure - Application
                                                     </div>
                                                     <input type="text" placeholder="Telephone" class="form-control" id="o1Phone"/>
                                                 </div>
+                                                <div class="input-group form-control-lg">
+                                                    <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="now-ui-icons ui-1_calendar-60"></i>
+                                                    </div>
+                                                    </div>
+                                                    <input type="text" placeholder="Date of Property purchase" class="form-control datepicker" id="purDate" name="purDate" />
+                                                </div>
                                                 <div>
-                                                    <select class="selectpicker"  data-style="btn btn-primary btn-round btn-block" title="Is the property the Owner's Principal Residence?" id="prinAd" name="prinAd">
-                                                        <option value="1">Yes, this is the main residence</option>
-                                                        <option value="2">No - I have another property in the UK</option>
-                                                        <option value="3">No - I have another proerty abroad</option>
+                                                    <select class="selectpicker"  data-style="btn btn-primary btn-round btn-block" title="Is the property the Owner's main residence?" id="prinAd" name="prinAd">
+                                                        <option value="1">Yes - This is the Owner's main residence</option>
+                                                        <option value="2">No - The Owner lives in another UK property</option>
+                                                        <option value="3">No - The Owner lives outside the UK</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -288,7 +296,7 @@ ClozeSure - Application
                                 <div class="text-center">
                                 <p class="text-center">To guarantee the sale of: <span id="first_line"></span>, <span id="second_line"></span>, <span id="post_town"></span>, <span id="postcode"></span>,
                                     with an agreed sale price of <span id="sale_price"></span></p>
-                                <small class="text-center" style="text-align:center">The above quote is subject to underwriting checks.</small>
+                                <small class="text-center" style="text-align:center">The above quote may change subject to the information provided.</small>
                                 </div>
                                 <div class="pull-right mt-4">
                                     <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next' />
