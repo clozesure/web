@@ -125,16 +125,8 @@ applybtn.onclick = function(){
     localStorage.setItem('oeac', owneac);
     localStorage.setItem('oeanEmail', owneanEmail);
     localStorage.setItem('app_num', randomNumber);
+
     var $validator = $('.card-wizard form').validate({
-        rules: {
-            'confCheck[]': {
-                    required: true,
-                    minlength: 1
-                },
-            },
-        messages: {
-            'confCheck[]': "Another message"
-        },
         highlight: function(element) {
             $(element).closest('.input-group').removeClass('has-success').addClass('has-danger');
             }
@@ -143,12 +135,12 @@ applybtn.onclick = function(){
     if(!$valid) {
         $validator.focusInvalid();
         demo.showNotification('top', 'center');
+
         return false;
     }
     window.document.location = './profile.html';
 
 }
-//
 
 demo = {
     initDateTimePicker: function() {
@@ -233,6 +225,9 @@ demo = {
                     minlength: 1
                 },
             },
+            messages: {
+                'confCheck[]': "  Required - "
+            },
             highlight: function(element) {
                 $(element).closest('.input-group').removeClass('has-success').addClass('has-danger');
             },
@@ -240,6 +235,7 @@ demo = {
                 $(element).closest('.input-group').removeClass('has-danger').addClass('has-success');
             }
         });
+
 
         // Wizard Initialization
         $('.card-wizard').bootstrapWizard({
