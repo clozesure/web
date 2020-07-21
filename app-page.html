@@ -68,6 +68,7 @@ ClozeSure - Application
                                     <h5 class="info-text"> To apply please complete all sections of this form or click to re-calculate <a href="index.html#calculator"><i class="fas fa-calculator"></i></a> </h5>
                                     <div class="row justify-content-center">
                                             <div class="col-sm-8">
+                                            <form name="appForm" id="appForm">
                                                 <div class="input-group form-control-lg">
                                                     <div class="input-group-prepend">
                                                     <div class="input-group-text">
@@ -90,7 +91,7 @@ ClozeSure - Application
                                                         <i class="now-ui-icons business_bank"></i>
                                                     </div>
                                                     </div>
-                                                    <input type="text" placeholder="Owner's National Insurance Number" class="form-control" id="o1NI" />
+                                                    <input type="text" placeholder="Owner's National Insurance Number" class="form-control" name="o1NI" id="o1NI" />
                                                 </div>
                                                 <div class="input-group form-control-lg">
                                                     <div class="input-group-prepend">
@@ -106,7 +107,7 @@ ClozeSure - Application
                                                         <i class="now-ui-icons text_caps-small"></i>
                                                     </div>
                                                     </div>
-                                                    <input type="text" placeholder="Telephone" class="form-control" id="o1Phone"/>
+                                                    <input type="text" placeholder="Telephone" class="form-control" name="o1Phone" id="o1Phone"/>
                                                 </div>
                                                 <div class="input-group form-control-lg">
                                                     <div class="input-group-prepend">
@@ -123,6 +124,7 @@ ClozeSure - Application
                                                         <option value="3">No - The Owner lives outside the UK</option>
                                                     </select>
                                                 </div>
+                                            </form>
                                             </div>
                                         </div>
                                     </div>
@@ -152,7 +154,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons ui-1_email-85"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="email" placeholder="Buyer's Email (required)" class="form-control" id="b1Email" />
+                                                        <input type="email" placeholder="Buyer's Email (required)" class="form-control" name="b1Email" id="b1Email" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -160,7 +162,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons text_caps-small"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="text" placeholder="Buyer's Telephone" class="form-control" id="b1Phone" />
+                                                        <input type="text" placeholder="Buyer's Telephone" class="form-control" name="b1Phone" id="b1Phone" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -175,7 +177,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons text_caps-small"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Name of Coveyancer" id="ocn" />
+                                                        <input type="text" class="form-control" placeholder="Name of Coveyancer" name="ocn" id="ocn" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -183,7 +185,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons text_caps-small"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="text" placeholder="Company" class="form-control" id="occ" />
+                                                        <input type="text" placeholder="Company" class="form-control" name="occ" id="occ" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -191,7 +193,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons ui-1_email-85"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="email" placeholder="Email" class="form-control" id="ocnEmail" />
+                                                        <input type="email" placeholder="Email" class="form-control" name="ocnEmail" id="ocnEmail" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -217,7 +219,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons text_caps-small"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Contact" id="oean" />
+                                                        <input type="text" class="form-control" placeholder="Contact" name="oean" id="oean" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -225,7 +227,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons text_caps-small"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="text" placeholder="Company" class="form-control" id="oeac" />
+                                                        <input type="text" placeholder="Company" class="form-control" name="oeac" id="oeac" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -233,7 +235,7 @@ ClozeSure - Application
                                                             <i class="now-ui-icons ui-1_email-85"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="email" placeholder="Email" class="form-control" id="oeanEmail"/>
+                                                        <input type="email" placeholder="Email" class="form-control" name="oeanEmail" id="oeanEmail"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -250,7 +252,7 @@ ClozeSure - Application
                                                         <i class="now-ui-icons ui-1_email-85"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="email" class="form-control" placeholder="Confirm your email" name="regEmail" />
+                                                        <input type="email" class="form-control" placeholder="Confirm your email" name="regEmail" id="regEmail" />
                                                     </div>
                                                     <div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
@@ -258,14 +260,14 @@ ClozeSure - Application
                                                         <i class="now-ui-icons ui-1_lock-circle-open"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="password" class="form-control" placeholder="Enter Password" name="regPw" />
+                                                        <input type="password" class="form-control" placeholder="Enter Password" name="regPw" id="regPW" />
                                                     </div><div class="input-group form-control-lg">
                                                         <div class="input-group-prepend">
                                                         <div class="input-group-text">
                                                         <i class="now-ui-icons ui-1_lock-circle-open"></i>
                                                         </div>
                                                         </div>
-                                                        <input type="password" class="form-control" placeholder="Confirm Password" name="regCPw" />
+                                                        <input type="password" class="form-control" placeholder="Confirm Password" name="regCPw" id="regCPw" />
                                                     </div>
                                                     <div class="mt-4" id="payTab">
                                                         <h5 class="info-text"> Payment Methods </h5>
@@ -284,17 +286,151 @@ ClozeSure - Application
                                                             </tbody>
                                                         </table>
                                                     </div>
+                                                <div class="mt-4">
                                                 <h5 class="info-text"> Confirm & Apply </h5>
                                                 <div class="row">
-                                                    <div class="col-sm-10">
-                                                        <p>I confirm that I have read and understand the Terms & Conditions and that I am entering into a legal agreement to purchase the ClozeSure Guarantee.</p>
+                                                    <div class="card card-plain card-nav-tabs">
+                                                        <div class="card-body">
+                                                            <button class="btn btn-primary btn-block btn-round text-left" type="button" data-toggle="collapse" data-target="#Cont" aria-expanded="false" aria-controls="Cont"
+                                                            <i class="now-ui-icons ui-1_lock-circle-open"></i>View the Guarantee Contract
+                                                            </button>
+                                                            <div class="collapse" id="Cont">
+                                                            <div class="card card-body" style="max-height:500px; overflow-y:scroll">
+                                                            <small><b>CLOZESURE GUARANTEE</b>
+                                                            <br>Reference: <b><span id="app_num"></span></b>
+                                                            <br>This guarantee (the <b>"Guarantee"</b>), is dated as of <span id=app_date>Date</span> (the <b>"Effective Date"</b>) by and between:
+                                                            <br><b class="text-primary">Contract Completion Company Limited</b>, a limited company with its principal place of business at 8-11 Crescent, London EC3N 2LY, (the <b>"Guarantor"/"Us"/"We"</b>)
+                                                            <br>and
+                                                            <br><b class="text-primary"><span id="o1fng"></span> <span id="o1lng"></span></b> (the <b>"Vendor"/"Seller"/"You"/"Your"</b>).
+                                                            <br>W I T N E S S E T H:
+                                                            <br><b>WHEREAS</b> <b class="text-primary"><span id="b1fng"></span> <span id="b1lng"></span></b> (the <b>"Vendee(s)"/"Buyer(s)"/"Their"</b>) have entered into an Agreement by Contract to purchase <b>Your</b> property located at
+                                                              <b class="text-primary"><span id="gfirst_line"></span>, <span id="gsecond_line"></span>, <span id="gpost_town"></span>, <span id="gpostcode"></span></b>,
+                                                              for the sum of <b class="text-primary"><span id="gsale_price"></span></b>; and
+                                                            <br><b>WHEREAS You</b> have asked <b>Us</b> to provide a Guarantee for the outstanding sum of the obligation of the <b>Buyer</b> of <b>Your</b> property, for the agreed purchase price
+                                                              less the deposit received, in the event that the <b>Buyer</b> is unable or unwilling to make such a payment and fails to complete; and
+                                                            <br><b>WHEREAS You</b> confirm that <b>You</b> or <b>Your</b> designated Legal Representative has received the completed closing documents and 10% deposit from the <b>Buyer</b> of the Property; and
+                                                            <br><b>NOW, THEREFORE</b> for the value received, in consideration of the premises and other good and valuable consideration, the receipt and sufficency of which are hereby acknowledged, <b>You</b>
+                                                               and <b>We</b> as <b>Guarantors</b> hereby agree as follows:
+                                                              <br><br><b>Section 1.  Guarantee.</b>
+                                                            <br>We Guarantee You, payment of 90% of the agreed purchase price, payable by the Buyer pursuant to the Sale Agreement to the extent same has not been paid to You by the Buyer [within the specified period] and in accordance with Their Obligations (the "Obligations"); provided that You shall:
+                                                            <br>i)  Provide valid notice to complete to the Buyer, and at the same time;
+                                                            <br>ii) Provide Us with ten Business Days ("Business Day" being a day on which the banks are open for business (Monday to Friday inclusive, not counting weekends or bank holidays and the like) in London, England) prior written notice (the "Notice") for payment, which Notice shall be given to the Guarantor no later than the same day on which such Obligations become due and owing.
+                                                            <br>Your claim for payment of the Buyer’s Obligations shall be released to the extent of Our payment hereunder, or at Our sole discretion, We may elect to be subrogated to such claim in accordance with Section 7.
+                                                            <br>
+                                                            <br><b>Section 2.  Eligibility.</b>
+                                                            <br>When You apply for this Guarantee We asked You to confirm that You were eligible for this Guarantee. You are eligible for this Guarantee provided that, at the Effective Date:
+                                                            <br>•   You are aged 18 or over, and
+                                                            <br>•   You are selling a Property in England, Wales or Northern Ireland, and
+                                                            <br>•   Your buyer is a private individual/s (i.e. not buying Your property on behalf of a corporate entity or trust), and
+                                                            <br>•   Your Buyer must not be a family member, friend, work colleague, acquaintance, or ‘connected party’, and
+                                                            <br>•   Your sale must be unconditional, and
+                                                            <br>•   You must meet all of Your obligations within the Sale Agreement in full, and
+                                                            <br>•   Your Buyer’s deposit, payable on exchange of contracts, is at least 10% of the agreed sale price of Your property, and
+                                                            <br>•   You must apply for cover under this policy before or on the day of exchange of contracts, and
+                                                            <br>•   Your policy must be purchased at least 10 days prior to the agreed completion date, and
+                                                            <br>•   Your property must be sold with vacant possession on the completion date, and
+                                                            <br>•   Your Buyer and You are both using a solicitor or licensed conveyancer to conduct the conveyancing.
+                                                            <br>We will not provide a Guarantee if You do not meet or cannot confirm all of these eligibility requirements at the Effective Date of this Guarantee.
+                                                            <br>Please contact Us as soon as possible if You are not eligible for this Guarantee or if You have any queries.
+                                                            <br>
+                                                            <br><b>Section 3.  Consideration.</b>
+                                                            <br>It is a Condition Precedent that in the event of default by the Buyer and in consideration of payment by Us to You, the title for Your property shall pass to Us.
+                                                            <br><br><b>Section 4.  Nature of Guarantee.</b>
+                                                            <br>This Guarantee is a Guarantee of collection and not of payment.
+                                                            <br>
+                                                            <br><b>Section 5.  Currency.</b>
+                                                            <br>All payments to be made by You and Us hereunder shall be made in Great British Pounds (Sterling).
+                                                            <br>
+                                                            <br><b>Section 6.  Withholding.</b>
+                                                            <br>All payments made by Us shall be made without withholding or deduction for or on account of any present or future tax duty or charge whatsoever imposed or levied.
+                                                            <br>
+                                                            <br><b>Section 7.  Subrogation.</b>
+                                                            <br>With respect to the Sale Agreement and upon payment by Us of all Obligations owing to You, then We shall be subrogated Your rights against the Buyer, and You agree to take such steps and to execute such documentation that We may reasonably request.
+                                                            <br>
+                                                            <br><b>Section 8.  Government Limitations.</b>
+                                                            <br>In the event of Governmental limitations placed on property purchases, that causes delay on the completion date, the specified period shall be frozen until the limitations are relinquished. At this point, the days remaining from the original specified period shall remain for the new coverage period.
+                                                            <br>
+                                                             
+                                                            <br><b>Section  9.     What is not Covered.</b>
+                                                            <br>The following exclusions apply to this Guarantee and this Guarantee does not cover the following:
+                                                            <br>1.  If You, the Vendor, decide not to sell the property prior to completion, and withdraw the Property from sale for reasons beyond your Buyer’s control, or;
+                                                            <br>2.  Failure by Your Buyer to complete directly or indirectly due to a material depreciation in the condition or value of the property due to Your failure to fulfil Your obligations; or
+                                                            <br>3.  Failure by Your Buyer to complete due to Your failure to satisfy any outstanding conditions applied by the Buyer or the Buyer’s conveyancer/solicitor, or
+                                                            <br>4.  Deliberate behaviour by You that results in the Buyer withdrawing from the Property sale. Such behaviour will not include normal communication involved in a sale. An example of behaviour causing the Buyer to withdraw is You seeking an increase in the agreed sale price or a change to the terms of the Sale Agreement after You have exchanged contracts with Your Buyer, or
+                                                            <br>5.  You, the Vendor, not being legally entitled to sell the property, or
+                                                            <br>6.  Physical loss or damage to Your property, or
+                                                            <br>7.  Loss, damage or liability arising out of a deliberate act by You or by anyone acting on Your behalf, or
+                                                            <br>8.  Failure to complete directly or indirectly due to:
+                                                            <br>a.  Biological or chemical contamination. This includes poisoning, or preventing or limiting the use of an object, due to the effects of any biological or chemical agent; or
+                                                            <br>b.  Any failure in the supply of gas, water, electricity or phone service to Your property; and caused by or resulting from an act of terrorism.
+                                                            <br>9.  Failure to complete directly or indirectly due to loss or distortion of information resulting from computer error or malfunction or computer virus.
+                                                            <br>10. Failure to complete directly or indirectly due to nuclear reaction, nuclear radiation or radioactive contamination.
+                                                            <br>11. Failure to complete directly or indirectly due to war, invasion, act of foreign enemies, hostilities (whether war be declared or not), civil war, rebellion, revolution, insurrection, military or usurped power.
+                                                            <br>12. Failure to complete directly or indirectly due to or resulting from Your property being confiscated, taken, damaged or destroyed by or under the order of any government or public or local authority.
+                                                            <br>13. Any claim where You would be entitled to be paid under any other policy of insurance or guarantee if this Guarantee did not exist. However, this exclusion does not apply to any amount above that which would be covered under the other policy of insurance or guarantee.
+                                                            <br>
+                                                            <br><b>Section 10. Notices.</b>
+                                                            <br>All notices and other communications provided to Us (or Subsidiary) shall be in email form to You.
+                                                            <br>
+                                                            <br><b>Section 11.     Governing Law; Consent to Jurisdiction; Waiver of Jury Trial.</b>
+                                                            <br>This Guarantee shall be governed by, and construed and enforced in accordance with, the laws of the England & Wales.  You and We hereby submit to the exclusive jurisdiction of the English Court for the purposes of all legal proceedings arising out of or relating to this Guarantee and all matters contemplated hereby. We irrevocably consent to the service of any and all process in any legal proceeding by the mailing (or delivery by overnight courier) of copies of such process to Us at (our) address pursuant to this Guarantee.
+                                                            <br>We hereby irrevocably waive any objection to such service of process and further irrevocably waive and agree not to plead or claim in any action or proceeding commenced hereunder that service of process was in any way invalid or ineffective.
+                                                            <br>We agree that a final judgment in any such action or proceeding shall be conclusive and may be enforced in other jurisdictions by suit on the judgment or in any other manner provided by law.  Each of the parties to this Guarantee hereby irrevocably waives, to the fullest extent permitted by applicable law, any and all right to trial by jury in any legal proceeding arising out of or relating to this Guarantee or the transactions contemplated hereby.
+                                                            <br>
+                                                            <br><b>Section 12.     Severability of Provisions.</b>
+                                                            <br>Any provision of this Guarantee which is prohibited or unenforceable by law, shall be ineffective to the extent of such prohibition or unenforceability without invalidating the remaining provisions hereof or affecting the validity or enforceability of such provision in any other jurisdiction.
+                                                            <br> 
+                                                            <br><b>Section 13. Assignment and Third Parties.</b>
+                                                            <br>Our Guarantee hereunder is solely for Your benefit and no third party may make any claim under, or rely upon, this Guarantee.  This Guarantee shall come into force as of the Effective Date.
+                                                            <br>Subject to Section 12, the Guarantee:
+                                                            <br>(i) shall remain in full force and effect until the successful completion of the property purchase or payment in full of all relevant Obligations, whichever is the later;
+                                                            <br>(ii)    shall be binding upon Us as Guarantor, its successors and assigns; and
+                                                            <br>(iii)   shall inure to the benefit of the Your successors and permitted assigns.
+                                                            <br>
+                                                            <br><b>Section 14. Amendment, Modification or Termination.</b>
+                                                            <br>This Guarantee shall supersede any prior or contemporaneous representations, statements or agreements, oral or written, with regard to this subject matter unless amended in writing.
+                                                            <br>
+                                                            <br><b>Section 15.     Execution in Counterparts.</b>
+                                                            <br>This Guarantee and any amendments, waivers, consents or supplements hereto may be executed in any number of counterparts and by different parties in separate counterparts, each of which when so executed and delivered shall be deemed to be an original, but all such counterparts together shall constitute one and the same agreement.
+                                                            <br>
+                                                            <br><b>Section 16.     Headings and Preamble.</b>
+                                                                                                    <br>The Section headings used in this Guarantee are for convenience of reference only and shall not affect the construction of this Guarantee. The Preamble is an integral part hereof.</small>
+
+                                                                <p class="mb0 mt-4"></p>
+                                                            </div>
+                                                            </div>
+                                                            <button class="btn btn-primary btn-block btn-round text-left" type="button" data-toggle="collapse" data-target="#Data" aria-expanded="false" aria-controls="Data"
+                                                            <i class="fas fa-question-circle mr-2"></i>View the Data Protection Policy
+                                                            </button>
+                                                            <div class="collapse" id="Data">
+                                                            <div class="card card-body" style="max-height:500px; overflow-y:scroll">
+                                                                <small><b>Data Protection</b><br>
+                                                                Any information provided to Us by You or regarding You will be processed by Us in compliance with the provisions of the Data Protection Act 1998, General Data Protection Regulation or any replacement regulation for the purpose of providing a Guarantee and handling claims. This may necessitate providing the information to third parties.
+                                                                All phone calls relating to applications and claims may be monitored and recorded and the recordings used for fraud prevention and detection, training and quality control purposes.<br>
+                                                                In respect of the personal data (as defined under the General Data Protection Regulation (2016/679) (for as long as it is applicable to Us), the Data Protection Act 1998 and any replacement legislation to such Act) (“Personal Data”) provided by You to Us in connection with the services hereunder, prior to giving Us any such Personal Data You undertake that You have, to the extent required, obtained the consent of, and provided proper notice to, the relevant data subjects of the provision of the Personal Data hereunder and the information and the usage to be made of such Personal Data as set out in Our Privacy Notice available here: http://www.clozesure.com/privacy-notice.
+                                                                Each party shall comply with good data protection practice and meet its obligations under the data protection laws and regulations applicable to the territory/ies in which it operates. If either party receives Personal Data, of a data subject protected under the General Data Protection Regulation (2016/679), from the other party in connection with these Terms of Business, the receiving party will comply with its obligations under the General Data Protection Regulation (for as long as it is applicable), the Data Protection Act 1998 and any replacement legislation to such Act.<br>
+                                                                Important: Our use, disclosure and other processing of Your information, as described in this Guarantee, is permitted by applicable data protection law and regulation because:<br>
+                                                                (i)	it is necessary for the purposes of Our legitimate interests in pursuing the purposes set out in this agreement and the privacy policy;<br>
+                                                                (ii)	it is necessary to process Your sensitive personal data for reasons of substantial public interest, for example to prevent or detect unlawful acts or for a Guarantee purpose;<br>
+                                                                (iii)	in some cases You may have provided consent to Our processing of Your sensitive personal data in accordance with the purposes set out in this agreement and the privacy policy; and/or, in some cases,<br>
+                                                                (iv)	it is necessary so that we can comply with applicable law and regulation.<br>
+                                                                You have certain rights of access to and rectification or erasure of Your Personal Data and to restrict or object to its processing, to tell us that You do not wish to receive marketing information, and (in some circumstances) to require certain of Your  information to be transferred to You or a third party, under data protection law, which You can exercise by contacting Us at complaints@clozesure.com  You can also lodge complaints about our processing of Your personal data with the Information Commissioner’s Office (www.ico.org.uk ). Any information You give Us will be used by Us and We may also share this information with other group companies.</small>
+
+                                                                <p class="mb0 mt-4"></p>
+                                                            </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-sm-2 mt-2">
-                                                        <input class="input-group" type="checkbox" style="zoom:1.3;" id="confCheck" name="confCheck[]" />
+                                                    <div class="col-sm-10">
+                                                        <p>I confirm that I have read and understand the Guarantee Contract AND the Data Protection Policy and that I am entering into a legal agreement to purchase the ClozeSure Guarantee.</p>
+                                                    </div>
+                                                    <div class="col-sm-2 mt-2" id="ccdiv">
+                                                        <input class="input-group mt-2" type="checkbox" style="zoom:1.3;" id="confCheck" name="confCheck[]" />
                                                         <label for="#confCheck">I agree</label>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

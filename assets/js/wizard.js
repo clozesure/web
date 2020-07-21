@@ -45,7 +45,25 @@ const oean = document.getElementById("oean");
 const oeac = document.getElementById("oean");
 const oeanEmail = document.getElementById("oeanEmail");
 const regEmail = document.getElementById("regEmail");
+const app_num = document.getElementById("app_num");
+const app_date = document.getElementById("app_date");
+const gfirst_line = document.getElementById("gfirst_line");
+const gsecond_line = document.getElementById("gsecond_line");
+const gpost_town = document.getElementById("gpost_town");
+const gpostcode = document.getElementById("gpostcode");
+const gsale_price = document.getElementById("gsale_price");
+const o1fng = document.getElementById("o1fng");
+const o1lng = document.getElementById("o1lng");
+const b1fng = document.getElementById("b1fng");
+const b1lng = document.getElementById("b1lng");
 const confCheck = document.getElementById("confCheck");
+const ccdiv = document.getElementById("ccdiv");
+
+gfirst_line.innerHTML = pafl;
+gsecond_line.innerHTML = pasl;
+gpost_town.innerHTML = papt;
+gpostcode.innerHTML = p_code;
+gsale_price.innerHTML = '£' + s_price;
 
 //Show or hide Payment
 const payTab = document.getElementById("payTab");
@@ -57,7 +75,35 @@ if (sp_num >= max_value) {
     payTab.style.display="none";
 }
 
-// regEmail.value = o1Email.value;
+//Get today's date
+var objToday = new Date(),
+    weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+    dayOfWeek = weekday[objToday.getDay()],
+    domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
+    dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
+    months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+    curMonth = months[objToday.getMonth()],
+    curYear = objToday.getFullYear(),
+    curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
+    curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
+    curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
+    curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
+var today = dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
+localStorage.setItem('app_date', today)
+app_date.innerHTML = today;
+
+
+//Get random App number
+var desiredMaxLength = 8
+var randomNumber = '';
+for (var i = 0; i < desiredMaxLength; i++) {
+    randomNumber += Math.floor(Math.random() * 10);
+}
+localStorage.setItem('app_num', randomNumber);
+app_num.innerHTML = randomNumber;
+
+//Create empty object for debug
+var appFields;
 
 cancelbtn.onclick = function() {
     window.document.location = './index.html';
@@ -85,27 +131,6 @@ applybtn.onclick = function(){
     const owneac = oeac.value;
     const owneanEmail = oeanEmail.value;
 
-    var objToday = new Date(),
-        weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
-        dayOfWeek = weekday[objToday.getDay()],
-        domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
-        dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
-        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
-        curMonth = months[objToday.getMonth()],
-        curYear = objToday.getFullYear(),
-        curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
-        curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
-        curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
-        curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
-    var today = dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
-    localStorage.setItem('app_date', today)
-
-    var desiredMaxLength = 8
-    var randomNumber = '';
-    for (var i = 0; i < desiredMaxLength; i++) {
-    randomNumber += Math.floor(Math.random() * 10);
-    }
-
     localStorage.setItem('o1fn', own1fn);
     localStorage.setItem('o1ln', own1ln);
     localStorage.setItem('o1Email', own1Email);
@@ -124,7 +149,6 @@ applybtn.onclick = function(){
     localStorage.setItem('oean', ownean);
     localStorage.setItem('oeac', owneac);
     localStorage.setItem('oeanEmail', owneanEmail);
-    localStorage.setItem('app_num', randomNumber);
 
     var $validator = $('.card-wizard form').validate({
         highlight: function(element) {
@@ -135,7 +159,7 @@ applybtn.onclick = function(){
     if(!$valid) {
         $validator.focusInvalid();
         demo.showNotification('top', 'center');
-
+        //ccdiv.style.background="#f96332";
         return false;
     }
     window.document.location = './profile.html';
@@ -249,7 +273,17 @@ demo = {
                     $validator.focusInvalid();
                     demo.showNotification('top', 'center');
                     return false;
+                } else {
+                    var appObject = $('form').serializeArray();
+                    o1fng.innerHTML = appObject[0].value;
+                    o1lng.innerHTML = appObject[1].value;
+                    regEmail.value = appObject[3].value;
+                    b1fng.innerHTML = appObject[7].value;
+                    b1lng.innerHTML = appObject[8].value;
+                    appFields = appObject;
+                    return true;
                 }
+
             },
 
             onInit : function(tab, navigation, index){
@@ -437,5 +471,5 @@ demo = {
                 align: align
             }
         });
-    }
+    },
 };

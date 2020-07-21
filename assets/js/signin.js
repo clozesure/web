@@ -7,7 +7,7 @@ signin.onclick = function() {
     if (email.value == evalid && password.value !=='') {
         window.document.location = './profile.html';
     } else {
-        alert("You do not currently have an account with us.  Please go to the ClozeSure homepage to apply")
+        alert("You do not seem to have an account with us.  Please go to the ClozeSure homepage to apply")
     }
 }
 
