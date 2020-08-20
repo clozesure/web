@@ -44,7 +44,9 @@ owner_last.innerHTML = last;
 buyer_first.innerHTML = buyfirst;
 buyer_last.innerHTML = buylast;
 first_line.innerHTML = pafl;
-second_line.innerHTML = pasl;
+if (pasl !== "") {
+    second_line.innerHTML = `${pasl},`;
+}
 post_town.innerHTML = papt;
 app_date.innerHTML = date;
 app_num.innerHTML = number;

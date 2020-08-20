@@ -17,11 +17,13 @@ p_code = localStorage.getItem('papc');
 s_price = localStorage.getItem('sale_price');
 sp_num = localStorage.getItem('sp_num');
 
-first_line.innerHTML = pafl;
-second_line.innerHTML = pasl;
-post_town.innerHTML = papt;
+first_line.innerHTML = `${pafl},`;
+if (pasl !== "") {
+    second_line.innerHTML = `${pasl},`;
+}
+post_town.innerHTML = `${papt},`;
 postcode.innerHTML = p_code;
-sale_price.innerHTML = '£' + s_price;
+sale_price.innerHTML = `£ ${s_price}`;
 
 //Get form fields
 const o1fn = document.getElementById("o1fn");
@@ -59,11 +61,13 @@ const b1lng = document.getElementById("b1lng");
 const confCheck = document.getElementById("confCheck");
 const ccdiv = document.getElementById("ccdiv");
 
-gfirst_line.innerHTML = pafl;
-gsecond_line.innerHTML = pasl;
-gpost_town.innerHTML = papt;
-gpostcode.innerHTML = p_code;
-gsale_price.innerHTML = '£' + s_price;
+gfirst_line.innerHTML = `${pafl},`;
+if (pasl !== "") {
+    gsecond_line.innerHTML = `${pasl},`;
+}
+gpost_town.innerHTML = `${papt},`;
+gpostcode.innerHTML = `${p_code},`;
+gsale_price.innerHTML = `£ ${s_price}`;
 
 //Show or hide Payment
 const payTab = document.getElementById("payTab");
@@ -104,6 +108,8 @@ app_num.innerHTML = randomNumber;
 
 //Create empty object for debug
 var appFields;
+var mPrem;
+var tPrem;
 
 cancelbtn.onclick = function() {
     window.document.location = './index.html';
@@ -186,7 +192,7 @@ demo = {
 
         if($(".datepicker").length != 0){
           $('.datepicker').datetimepicker({
-             format: 'DD/MM/YYYY',
+             format: 'MM/DD/YYYY',
              icons: {
                  time: "now-ui-icons tech_watch-time",
                  date: "now-ui-icons ui-1_calendar-60",
@@ -268,6 +274,9 @@ demo = {
             'previousSelector': '.btn-previous',
 
             onNext: function(tab, navigation, index) {
+                var $total = navigation.find('li').length;
+                var $wizard = navigation.closest('.card-wizard');
+                var $current = index+1;
                 var $valid = $('.card-wizard form').valid();
                 if(!$valid) {
                     $validator.focusInvalid();
@@ -281,6 +290,32 @@ demo = {
                     b1fng.innerHTML = appObject[7].value;
                     b1lng.innerHTML = appObject[8].value;
                     appFields = appObject;
+                    
+                    
+                    // To implelment additional risk pricing for MR
+                    var mainRes = appObject[6].value;
+                    if (mainRes == 2) {
+                        var mainResPrem = parseInt(value*0.025);
+                        mPrem = mainResPrem;
+                    } else if (mainRes == 3) {
+                        var mainResPrem = parseInt(value*0.05);
+                        mPrem = mainResPrem;
+                    } else mPrem = 0;
+                    // To implement additional risk pricing for Ex-Comp timescale
+                    var exDate = new Date(appObject[14].value);
+                    var comDate = new Date(appObject[15].value);
+                    var timeDif = comDate.getTime() - exDate.getTime();
+                    dayDif = timeDif / (1000 * 3600 *24);
+                    if (dayDif >= 60) {
+                        var timePrem = parseInt(value*0.05);
+                        tPrem = timePrem;
+                    } else if (dayDif >= 30) {
+                        var timePrem = parseInt(value*0.025);
+                        tPrem = timePrem;
+                    } else tPrem = 0;
+                    var prem = parseInt(value) + parseInt(mPrem) + parseInt(tPrem);
+                    price.innerHTML = `£ ${prem}`;
+
                     return true;
                 }
 
@@ -314,7 +349,7 @@ demo = {
                     return true;
                 }
             },
-
+            
             onTabShow: function(tab, navigation, index) {
                 var $total = navigation.find('li').length;
                 var $current = index+1;
