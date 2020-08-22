@@ -4117,8 +4117,8 @@ img {
     text-align: center;
     margin-bottom: 50px; }
   .page-header.page-header-small {
-    min-height: 70vh;
-    max-height: 660px; }
+    min-height: 60vh;
+    max-height: 440px; }
   .page-header:before {
     background-color: rgba(0, 0, 0, 0.3); }
   .page-header > .container {
@@ -5038,7 +5038,7 @@ img {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%); } }
 
-@media only screen and (min-height: 950px) {
+@media only screen and (min-height: 1050px) {
   .index-page .page-header .category-absolute {
     margin-top: -330px; } }
 
