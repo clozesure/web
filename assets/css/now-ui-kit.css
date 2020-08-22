@@ -4138,7 +4138,7 @@ img {
     left: 50%;
     z-index: 2;
     -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -30%);
     text-align: center;
     color: #FFFFFF;
     padding: 0 15px;
@@ -5038,7 +5038,7 @@ img {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%); } }
 
-@media only screen and (min-height: 995px) {
+@media only screen and (min-height: 950px) {
   .index-page .page-header .category-absolute {
     margin-top: -330px; } }
 
