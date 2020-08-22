@@ -4138,7 +4138,7 @@ img {
     left: 50%;
     z-index: 2;
     -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -40%);
     text-align: center;
     color: #FFFFFF;
     padding: 0 15px;
@@ -4976,7 +4976,7 @@ img {
     .section-nucleo-icons .icons-container i:nth-child(6) {
       font-size: 48px; }
   .page-header .container h6.category-absolute {
-    width: 90%; } }
+    width: 95%; } }
 
 @media screen and (min-width: 991px) and (max-width: 1200px) {
   .section-images .hero-images-container-1 {
