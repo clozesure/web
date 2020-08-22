@@ -4117,7 +4117,7 @@ img {
     text-align: center;
     margin-bottom: 50px; }
   .page-header.page-header-small {
-    min-height: 70vh;
+    min-height: 65vh;
     max-height: 440px; }
   .page-header:before {
     background-color: rgba(0, 0, 0, 0.3); }
@@ -4976,7 +4976,7 @@ img {
     .section-nucleo-icons .icons-container i:nth-child(6) {
       font-size: 48px; }
   .page-header .container h6.category-absolute {
-    width: 95%; } }
+    width: 90%; } }
 
 @media screen and (min-width: 991px) and (max-width: 1200px) {
   .section-images .hero-images-container-1 {
