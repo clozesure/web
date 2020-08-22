@@ -5038,9 +5038,9 @@ img {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%); } }
 
-@media only screen and (min-height: 1200px) {
+@media only screen and (min-height: 995px) {
   .index-page .page-header .category-absolute {
-    margin-top: -500px; } }
+    margin-top: -330px; } }
 
 /*# sourceMappingURL=now-ui-kit.css.map */
 p {
